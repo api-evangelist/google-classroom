@@ -1,0 +1,249 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+$id: https://raw.githubusercontent.com/api-evangelist/google-classroom/refs/heads/main/json-schema/json-schema.yml
+title: Google Classroom API Schemas
+description: JSON Schema definitions for the Google Classroom API resources.
+type: object
+$defs:
+  Course:
+    type: object
+    title: Classroom Course
+    description: A course in Google Classroom.
+    properties:
+      id:
+        type: string
+        description: Identifier for this course.
+      name:
+        type: string
+        description: Name of the course.
+      section:
+        type: string
+        description: Section of the course.
+      descriptionHeading:
+        type: string
+        description: Optional heading for the description.
+      description:
+        type: string
+        description: Optional description.
+      room:
+        type: string
+        description: Optional room location.
+      ownerId:
+        type: string
+        description: The identifier of the owner of a course.
+      courseState:
+        type: string
+        description: State of the course.
+        enum: [COURSE_STATE_UNSPECIFIED, ACTIVE, ARCHIVED, PROVISIONED, DECLINED, SUSPENDED]
+      alternateLink:
+        type: string
+        format: uri
+        description: Absolute link to the course in the Classroom web UI.
+      enrollmentCode:
+        type: string
+        description: Enrollment code to use when joining this course.
+      courseGroupEmail:
+        type: string
+        format: email
+      teacherGroupEmail:
+        type: string
+        format: email
+      creationTime:
+        type: string
+        format: date-time
+      updateTime:
+        type: string
+        format: date-time
+      guardiansEnabled:
+        type: boolean
+  CourseWork:
+    type: object
+    title: Course Work
+    description: An assignment or question in a course.
+    properties:
+      courseId:
+        type: string
+      id:
+        type: string
+      title:
+        type: string
+        description: Title of the course work.
+      description:
+        type: string
+        description: Optional description.
+      state:
+        type: string
+        enum: [COURSE_WORK_STATE_UNSPECIFIED, PUBLISHED, DRAFT, DELETED]
+      workType:
+        type: string
+        description: Type of this course work.
+        enum: [COURSE_WORK_TYPE_UNSPECIFIED, ASSIGNMENT, SHORT_ANSWER_QUESTION, MULTIPLE_CHOICE_QUESTION]
+      maxPoints:
+        type: number
+        description: Maximum grade for this course work.
+      dueDate:
+        type: object
+        properties:
+          year:
+            type: integer
+          month:
+            type: integer
+          day:
+            type: integer
+      dueTime:
+        type: object
+        properties:
+          hours:
+            type: integer
+          minutes:
+            type: integer
+      topicId:
+        type: string
+      creationTime:
+        type: string
+        format: date-time
+      updateTime:
+        type: string
+        format: date-time
+      scheduledTime:
+        type: string
+        format: date-time
+  StudentSubmission:
+    type: object
+    title: Student Submission
+    description: A student submission for course work.
+    properties:
+      courseId:
+        type: string
+      courseWorkId:
+        type: string
+      id:
+        type: string
+      userId:
+        type: string
+      state:
+        type: string
+        description: State of the submission.
+        enum: [SUBMISSION_STATE_UNSPECIFIED, NEW, CREATED, TURNED_IN, RETURNED, RECLAIMED_BY_STUDENT]
+      assignedGrade:
+        type: number
+        description: Optional grade assigned to the submission.
+      draftGrade:
+        type: number
+        description: Optional draft grade.
+      late:
+        type: boolean
+        description: Whether the submission was turned in late.
+      creationTime:
+        type: string
+        format: date-time
+      updateTime:
+        type: string
+        format: date-time
+  Student:
+    type: object
+    title: Student
+    description: A student in a course.
+    properties:
+      courseId:
+        type: string
+      userId:
+        type: string
+      profile:
+        $ref: '#/$defs/UserProfile'
+      studentWorkFolder:
+        type: object
+        properties:
+          id:
+            type: string
+          title:
+            type: string
+          alternateLink:
+            type: string
+            format: uri
+  Teacher:
+    type: object
+    title: Teacher
+    description: A teacher of a course.
+    properties:
+      courseId:
+        type: string
+      userId:
+        type: string
+      profile:
+        $ref: '#/$defs/UserProfile'
+  UserProfile:
+    type: object
+    title: User Profile
+    description: A user profile in Google Classroom.
+    properties:
+      id:
+        type: string
+      name:
+        type: object
+        properties:
+          givenName:
+            type: string
+          familyName:
+            type: string
+          fullName:
+            type: string
+      emailAddress:
+        type: string
+        format: email
+      photoUrl:
+        type: string
+        format: uri
+      verifiedTeacher:
+        type: boolean
+  Announcement:
+    type: object
+    title: Announcement
+    description: An announcement in a course.
+    properties:
+      courseId:
+        type: string
+      id:
+        type: string
+      text:
+        type: string
+        description: Body text of the announcement.
+      state:
+        type: string
+        enum: [ANNOUNCEMENT_STATE_UNSPECIFIED, PUBLISHED, DRAFT, DELETED]
+      creationTime:
+        type: string
+        format: date-time
+      updateTime:
+        type: string
+        format: date-time
+      creatorUserId:
+        type: string
+  Topic:
+    type: object
+    title: Topic
+    description: A topic in a course used to organize course work.
+    properties:
+      courseId:
+        type: string
+      topicId:
+        type: string
+      name:
+        type: string
+        description: The name of the topic.
+      updateTime:
+        type: string
+        format: date-time
+  Invitation:
+    type: object
+    title: Invitation
+    description: An invitation to join a course.
+    properties:
+      id:
+        type: string
+      userId:
+        type: string
+      courseId:
+        type: string
+      role:
+        type: string
+        enum: [COURSE_ROLE_UNSPECIFIED, STUDENT, TEACHER, OWNER]

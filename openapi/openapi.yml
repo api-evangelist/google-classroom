@@ -1,0 +1,749 @@
+openapi: 3.1.0
+info:
+  title: Google Classroom API
+  description: >-
+    The Google Classroom API manages courses, coursework, student submissions,
+    announcements, materials, rosters, topics, invitations, guardians, and
+    integrations with third-party add-ons for educational workflows.
+  version: v1
+  contact:
+    name: Google
+    url: https://developers.google.com/classroom
+servers:
+  - url: https://classroom.googleapis.com
+paths:
+  /v1/courses:
+    get:
+      operationId: listCourses
+      summary: List courses
+      description: Returns a list of courses that the requesting user is permitted to view.
+      parameters:
+        - name: pageSize
+          in: query
+          schema:
+            type: integer
+        - name: pageToken
+          in: query
+          schema:
+            type: string
+        - name: studentId
+          in: query
+          schema:
+            type: string
+        - name: teacherId
+          in: query
+          schema:
+            type: string
+        - name: courseStates
+          in: query
+          schema:
+            type: array
+            items:
+              type: string
+              enum: [COURSE_STATE_UNSPECIFIED, ACTIVE, ARCHIVED, PROVISIONED, DECLINED, SUSPENDED]
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListCoursesResponse'
+    post:
+      operationId: createCourse
+      summary: Create course
+      description: Creates a course.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Course'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Course'
+  /v1/courses/{id}:
+    get:
+      operationId: getCourse
+      summary: Get course
+      description: Returns a course.
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Course'
+    put:
+      operationId: updateCourse
+      summary: Update course
+      description: Updates a course.
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Course'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Course'
+    patch:
+      operationId: patchCourse
+      summary: Patch course
+      description: Updates one or more fields in a course.
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: updateMask
+          in: query
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Course'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Course'
+    delete:
+      operationId: deleteCourse
+      summary: Delete course
+      description: Deletes a course.
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Successful deletion
+  /v1/courses/{courseId}/courseWork:
+    get:
+      operationId: listCourseWork
+      summary: List course work
+      description: Returns a list of course work that the requester is permitted to view.
+      parameters:
+        - name: courseId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: pageSize
+          in: query
+          schema:
+            type: integer
+        - name: pageToken
+          in: query
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListCourseWorkResponse'
+    post:
+      operationId: createCourseWork
+      summary: Create course work
+      description: Creates course work.
+      parameters:
+        - name: courseId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CourseWork'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CourseWork'
+  /v1/courses/{courseId}/courseWork/{id}:
+    get:
+      operationId: getCourseWork
+      summary: Get course work
+      description: Returns course work.
+      parameters:
+        - name: courseId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CourseWork'
+    patch:
+      operationId: patchCourseWork
+      summary: Patch course work
+      description: Updates one or more fields of a course work.
+      parameters:
+        - name: courseId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: updateMask
+          in: query
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CourseWork'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CourseWork'
+    delete:
+      operationId: deleteCourseWork
+      summary: Delete course work
+      description: Deletes a course work.
+      parameters:
+        - name: courseId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Successful deletion
+  /v1/courses/{courseId}/courseWork/{courseWorkId}/studentSubmissions:
+    get:
+      operationId: listStudentSubmissions
+      summary: List student submissions
+      description: Returns a list of student submissions.
+      parameters:
+        - name: courseId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: courseWorkId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: pageSize
+          in: query
+          schema:
+            type: integer
+        - name: pageToken
+          in: query
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListStudentSubmissionsResponse'
+  /v1/courses/{courseId}/students:
+    get:
+      operationId: listStudents
+      summary: List students
+      description: Returns a list of students of this course.
+      parameters:
+        - name: courseId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: pageSize
+          in: query
+          schema:
+            type: integer
+        - name: pageToken
+          in: query
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListStudentsResponse'
+    post:
+      operationId: addStudent
+      summary: Add student
+      description: Adds a user as a student of a course.
+      parameters:
+        - name: courseId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Student'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Student'
+  /v1/courses/{courseId}/teachers:
+    get:
+      operationId: listTeachers
+      summary: List teachers
+      description: Returns a list of teachers of this course.
+      parameters:
+        - name: courseId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: pageSize
+          in: query
+          schema:
+            type: integer
+        - name: pageToken
+          in: query
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListTeachersResponse'
+    post:
+      operationId: addTeacher
+      summary: Add teacher
+      description: Creates a teacher of a course.
+      parameters:
+        - name: courseId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Teacher'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Teacher'
+  /v1/courses/{courseId}/announcements:
+    get:
+      operationId: listAnnouncements
+      summary: List announcements
+      description: Returns a list of announcements.
+      parameters:
+        - name: courseId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: pageSize
+          in: query
+          schema:
+            type: integer
+        - name: pageToken
+          in: query
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+    post:
+      operationId: createAnnouncement
+      summary: Create announcement
+      description: Creates an announcement.
+      parameters:
+        - name: courseId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Announcement'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Announcement'
+  /v1/courses/{courseId}/topics:
+    get:
+      operationId: listTopics
+      summary: List topics
+      description: Returns the list of topics that the requester is permitted to view.
+      parameters:
+        - name: courseId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+    post:
+      operationId: createTopic
+      summary: Create topic
+      description: Creates a topic.
+      parameters:
+        - name: courseId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Topic'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Topic'
+  /v1/invitations:
+    get:
+      operationId: listInvitations
+      summary: List invitations
+      description: Returns a list of invitations.
+      parameters:
+        - name: courseId
+          in: query
+          schema:
+            type: string
+        - name: userId
+          in: query
+          schema:
+            type: string
+        - name: pageSize
+          in: query
+          schema:
+            type: integer
+        - name: pageToken
+          in: query
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+    post:
+      operationId: createInvitation
+      summary: Create invitation
+      description: Creates an invitation.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Invitation'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Invitation'
+  /v1/userProfiles/{userId}:
+    get:
+      operationId: getUserProfile
+      summary: Get user profile
+      description: Returns a user profile.
+      parameters:
+        - name: userId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserProfile'
+components:
+  schemas:
+    Course:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        section:
+          type: string
+        descriptionHeading:
+          type: string
+        description:
+          type: string
+        room:
+          type: string
+        ownerId:
+          type: string
+        courseState:
+          type: string
+          enum: [COURSE_STATE_UNSPECIFIED, ACTIVE, ARCHIVED, PROVISIONED, DECLINED, SUSPENDED]
+        enrollmentCode:
+          type: string
+        creationTime:
+          type: string
+          format: date-time
+        updateTime:
+          type: string
+          format: date-time
+    ListCoursesResponse:
+      type: object
+      properties:
+        courses:
+          type: array
+          items:
+            $ref: '#/components/schemas/Course'
+        nextPageToken:
+          type: string
+    CourseWork:
+      type: object
+      properties:
+        courseId:
+          type: string
+        id:
+          type: string
+        title:
+          type: string
+        description:
+          type: string
+        state:
+          type: string
+          enum: [COURSE_WORK_STATE_UNSPECIFIED, PUBLISHED, DRAFT, DELETED]
+        workType:
+          type: string
+          enum: [COURSE_WORK_TYPE_UNSPECIFIED, ASSIGNMENT, SHORT_ANSWER_QUESTION, MULTIPLE_CHOICE_QUESTION]
+        maxPoints:
+          type: number
+        dueDate:
+          type: object
+          properties:
+            year:
+              type: integer
+            month:
+              type: integer
+            day:
+              type: integer
+        dueTime:
+          type: object
+          properties:
+            hours:
+              type: integer
+            minutes:
+              type: integer
+        creationTime:
+          type: string
+          format: date-time
+        updateTime:
+          type: string
+          format: date-time
+    ListCourseWorkResponse:
+      type: object
+      properties:
+        courseWork:
+          type: array
+          items:
+            $ref: '#/components/schemas/CourseWork'
+        nextPageToken:
+          type: string
+    StudentSubmission:
+      type: object
+      properties:
+        courseId:
+          type: string
+        courseWorkId:
+          type: string
+        id:
+          type: string
+        userId:
+          type: string
+        state:
+          type: string
+          enum: [SUBMISSION_STATE_UNSPECIFIED, NEW, CREATED, TURNED_IN, RETURNED, RECLAIMED_BY_STUDENT]
+        assignedGrade:
+          type: number
+        draftGrade:
+          type: number
+        creationTime:
+          type: string
+          format: date-time
+        updateTime:
+          type: string
+          format: date-time
+    ListStudentSubmissionsResponse:
+      type: object
+      properties:
+        studentSubmissions:
+          type: array
+          items:
+            $ref: '#/components/schemas/StudentSubmission'
+        nextPageToken:
+          type: string
+    Student:
+      type: object
+      properties:
+        courseId:
+          type: string
+        userId:
+          type: string
+        profile:
+          $ref: '#/components/schemas/UserProfile'
+    ListStudentsResponse:
+      type: object
+      properties:
+        students:
+          type: array
+          items:
+            $ref: '#/components/schemas/Student'
+        nextPageToken:
+          type: string
+    Teacher:
+      type: object
+      properties:
+        courseId:
+          type: string
+        userId:
+          type: string
+        profile:
+          $ref: '#/components/schemas/UserProfile'
+    ListTeachersResponse:
+      type: object
+      properties:
+        teachers:
+          type: array
+          items:
+            $ref: '#/components/schemas/Teacher'
+        nextPageToken:
+          type: string
+    Announcement:
+      type: object
+      properties:
+        courseId:
+          type: string
+        id:
+          type: string
+        text:
+          type: string
+        state:
+          type: string
+          enum: [ANNOUNCEMENT_STATE_UNSPECIFIED, PUBLISHED, DRAFT, DELETED]
+        creationTime:
+          type: string
+          format: date-time
+        updateTime:
+          type: string
+          format: date-time
+    Topic:
+      type: object
+      properties:
+        courseId:
+          type: string
+        topicId:
+          type: string
+        name:
+          type: string
+        updateTime:
+          type: string
+          format: date-time
+    Invitation:
+      type: object
+      properties:
+        id:
+          type: string
+        userId:
+          type: string
+        courseId:
+          type: string
+        role:
+          type: string
+          enum: [COURSE_ROLE_UNSPECIFIED, STUDENT, TEACHER, OWNER]
+    UserProfile:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: object
+          properties:
+            givenName:
+              type: string
+            familyName:
+              type: string
+            fullName:
+              type: string
+        emailAddress:
+          type: string
+        photoUrl:
+          type: string

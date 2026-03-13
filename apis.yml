@@ -1,0 +1,52 @@
+name: Google Classroom
+description: >-
+  The Google Classroom API provides programmatic access to Google Classroom,
+  enabling management of courses, coursework, student submissions, rosters, and
+  invitations. It supports creating and organizing courses, distributing
+  assignments and materials, managing student and teacher enrollments, tracking
+  submissions and grades, and integrating with third-party educational tools
+  through add-on attachments.
+image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+url: https://raw.githubusercontent.com/api-evangelist/google-classroom/refs/heads/main/apis.yml
+created: '2026-03-13'
+modified: '2026-03-13'
+specificationVersion: '0.18'
+tags:
+  - Education
+  - Classroom
+  - Google
+  - Google Workspace
+  - Courses
+  - Assignments
+  - Students
+apis:
+  - name: Google Classroom API
+    description: >-
+      The Google Classroom API manages courses, coursework, student submissions,
+      announcements, materials, rosters, topics, invitations, guardians, and
+      integrations with third-party add-ons for educational workflows.
+    humanURL: https://developers.google.com/classroom
+    baseURL: https://classroom.googleapis.com
+    properties:
+      - type: OpenAPI
+        url: openapi/openapi.yml
+      - type: JSONSchema
+        url: json-schema/json-schema.yml
+      - type: JSONLD
+        url: json-ld/json-ld.jsonld
+    tags:
+      - Education
+      - Courses
+      - Assignments
+      - Students
+      - Teachers
+common:
+  - type: GettingStarted
+    url: https://developers.google.com/classroom/guides/get-started
+  - type: Pricing
+    url: https://edu.google.com/workspace-for-education/editions/overview/
+  - type: JSONLD
+    url: json-ld/json-ld.jsonld
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com

@@ -1,0 +1,89 @@
+{
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "classroom": "https://classroom.googleapis.com/v1/",
+    "goog": "https://developers.google.com/workspace/classroom/reference/rest/v1/",
+    "name": "schema:name",
+    "description": "schema:description",
+    "url": "schema:url",
+    "provider": "schema:provider",
+    "Course": {
+      "@id": "goog:courses",
+      "@context": {
+        "id": "schema:identifier",
+        "name": "schema:name",
+        "section": "schema:courseCode",
+        "description": "schema:description",
+        "room": "schema:location",
+        "ownerId": "schema:creator",
+        "courseState": "schema:status",
+        "enrollmentCode": "schema:accessCode",
+        "creationTime": "schema:dateCreated",
+        "updateTime": "schema:dateModified"
+      }
+    },
+    "CourseWork": {
+      "@id": "goog:courses.courseWork",
+      "@context": {
+        "id": "schema:identifier",
+        "title": "schema:name",
+        "description": "schema:description",
+        "state": "schema:creativeWorkStatus",
+        "workType": "schema:learningResourceType",
+        "maxPoints": "schema:educationalLevel",
+        "dueDate": "schema:expires",
+        "creationTime": "schema:dateCreated"
+      }
+    },
+    "StudentSubmission": {
+      "@id": "goog:courses.courseWork.studentSubmissions",
+      "@context": {
+        "id": "schema:identifier",
+        "userId": "schema:agent",
+        "state": "schema:status",
+        "assignedGrade": "schema:ratingValue",
+        "creationTime": "schema:dateCreated",
+        "updateTime": "schema:dateModified"
+      }
+    },
+    "Student": {
+      "@id": "goog:courses.students",
+      "@context": {
+        "userId": "schema:identifier",
+        "profile": "schema:Person"
+      }
+    },
+    "Teacher": {
+      "@id": "goog:courses.teachers",
+      "@context": {
+        "userId": "schema:identifier",
+        "profile": "schema:Person"
+      }
+    },
+    "Announcement": {
+      "@id": "goog:courses.announcements",
+      "@context": {
+        "id": "schema:identifier",
+        "text": "schema:text",
+        "state": "schema:creativeWorkStatus",
+        "creationTime": "schema:dateCreated"
+      }
+    },
+    "Topic": {
+      "@id": "goog:courses.topics",
+      "@context": {
+        "topicId": "schema:identifier",
+        "name": "schema:name"
+      }
+    }
+  },
+  "@type": "WebAPI",
+  "name": "Google Classroom API",
+  "description": "The Google Classroom API manages courses, coursework, student submissions, rosters, and educational workflows.",
+  "url": "https://developers.google.com/classroom",
+  "provider": {
+    "@type": "Organization",
+    "name": "Google",
+    "url": "https://developers.google.com"
+  }
+}
