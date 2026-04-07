@@ -15,7 +15,7 @@ paths:
   /v1/courses:
     get:
       operationId: listCourses
-      summary: List courses
+      summary: Google Classroom List courses
       description: Returns a list of courses that the requesting user is permitted to view.
       parameters:
         - name: pageSize
@@ -50,7 +50,7 @@ paths:
                 $ref: '#/components/schemas/ListCoursesResponse'
     post:
       operationId: createCourse
-      summary: Create course
+      summary: Google Classroom Create course
       description: Creates a course.
       requestBody:
         content:
@@ -67,7 +67,7 @@ paths:
   /v1/courses/{id}:
     get:
       operationId: getCourse
-      summary: Get course
+      summary: Google Classroom Get course
       description: Returns a course.
       parameters:
         - name: id
@@ -84,7 +84,7 @@ paths:
                 $ref: '#/components/schemas/Course'
     put:
       operationId: updateCourse
-      summary: Update course
+      summary: Google Classroom Update course
       description: Updates a course.
       parameters:
         - name: id
@@ -106,7 +106,7 @@ paths:
                 $ref: '#/components/schemas/Course'
     patch:
       operationId: patchCourse
-      summary: Patch course
+      summary: Google Classroom Patch course
       description: Updates one or more fields in a course.
       parameters:
         - name: id
@@ -132,7 +132,7 @@ paths:
                 $ref: '#/components/schemas/Course'
     delete:
       operationId: deleteCourse
-      summary: Delete course
+      summary: Google Classroom Delete course
       description: Deletes a course.
       parameters:
         - name: id
@@ -146,7 +146,7 @@ paths:
   /v1/courses/{courseId}/courseWork:
     get:
       operationId: listCourseWork
-      summary: List course work
+      summary: Google Classroom List course work
       description: Returns a list of course work that the requester is permitted to view.
       parameters:
         - name: courseId
@@ -171,7 +171,7 @@ paths:
                 $ref: '#/components/schemas/ListCourseWorkResponse'
     post:
       operationId: createCourseWork
-      summary: Create course work
+      summary: Google Classroom Create course work
       description: Creates course work.
       parameters:
         - name: courseId
@@ -194,7 +194,7 @@ paths:
   /v1/courses/{courseId}/courseWork/{id}:
     get:
       operationId: getCourseWork
-      summary: Get course work
+      summary: Google Classroom Get course work
       description: Returns course work.
       parameters:
         - name: courseId
@@ -216,7 +216,7 @@ paths:
                 $ref: '#/components/schemas/CourseWork'
     patch:
       operationId: patchCourseWork
-      summary: Patch course work
+      summary: Google Classroom Patch course work
       description: Updates one or more fields of a course work.
       parameters:
         - name: courseId
@@ -247,7 +247,7 @@ paths:
                 $ref: '#/components/schemas/CourseWork'
     delete:
       operationId: deleteCourseWork
-      summary: Delete course work
+      summary: Google Classroom Delete course work
       description: Deletes a course work.
       parameters:
         - name: courseId
@@ -266,7 +266,7 @@ paths:
   /v1/courses/{courseId}/courseWork/{courseWorkId}/studentSubmissions:
     get:
       operationId: listStudentSubmissions
-      summary: List student submissions
+      summary: Google Classroom List student submissions
       description: Returns a list of student submissions.
       parameters:
         - name: courseId
@@ -297,7 +297,7 @@ paths:
   /v1/courses/{courseId}/students:
     get:
       operationId: listStudents
-      summary: List students
+      summary: Google Classroom List students
       description: Returns a list of students of this course.
       parameters:
         - name: courseId
@@ -322,7 +322,7 @@ paths:
                 $ref: '#/components/schemas/ListStudentsResponse'
     post:
       operationId: addStudent
-      summary: Add student
+      summary: Google Classroom Add student
       description: Adds a user as a student of a course.
       parameters:
         - name: courseId
@@ -345,7 +345,7 @@ paths:
   /v1/courses/{courseId}/teachers:
     get:
       operationId: listTeachers
-      summary: List teachers
+      summary: Google Classroom List teachers
       description: Returns a list of teachers of this course.
       parameters:
         - name: courseId
@@ -370,7 +370,7 @@ paths:
                 $ref: '#/components/schemas/ListTeachersResponse'
     post:
       operationId: addTeacher
-      summary: Add teacher
+      summary: Google Classroom Add teacher
       description: Creates a teacher of a course.
       parameters:
         - name: courseId
@@ -393,7 +393,7 @@ paths:
   /v1/courses/{courseId}/announcements:
     get:
       operationId: listAnnouncements
-      summary: List announcements
+      summary: Google Classroom List announcements
       description: Returns a list of announcements.
       parameters:
         - name: courseId
@@ -414,7 +414,7 @@ paths:
           description: Successful response
     post:
       operationId: createAnnouncement
-      summary: Create announcement
+      summary: Google Classroom Create announcement
       description: Creates an announcement.
       parameters:
         - name: courseId
@@ -437,7 +437,7 @@ paths:
   /v1/courses/{courseId}/topics:
     get:
       operationId: listTopics
-      summary: List topics
+      summary: Google Classroom List topics
       description: Returns the list of topics that the requester is permitted to view.
       parameters:
         - name: courseId
@@ -450,7 +450,7 @@ paths:
           description: Successful response
     post:
       operationId: createTopic
-      summary: Create topic
+      summary: Google Classroom Create topic
       description: Creates a topic.
       parameters:
         - name: courseId
@@ -473,7 +473,7 @@ paths:
   /v1/invitations:
     get:
       operationId: listInvitations
-      summary: List invitations
+      summary: Google Classroom List invitations
       description: Returns a list of invitations.
       parameters:
         - name: courseId
@@ -497,7 +497,7 @@ paths:
           description: Successful response
     post:
       operationId: createInvitation
-      summary: Create invitation
+      summary: Google Classroom Create invitation
       description: Creates an invitation.
       requestBody:
         content:
@@ -514,7 +514,7 @@ paths:
   /v1/userProfiles/{userId}:
     get:
       operationId: getUserProfile
-      summary: Get user profile
+      summary: Google Classroom Get user profile
       description: Returns a user profile.
       parameters:
         - name: userId
