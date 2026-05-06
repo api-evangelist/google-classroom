@@ -1,0 +1,1166 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Google Classroom API
+  description: The Google Classroom API manages courses, coursework, student submissions, announcements, materials, rosters,
+    topics, invitations, guardians, and integrations with third-party add-ons for educational workflows.
+  tags:
+  - Google
+  - Classroom
+  - API
+  created: '2026-05-06'
+  modified: '2026-05-06'
+capability:
+  consumes:
+  - type: http
+    namespace: google-classroom
+    baseUri: https://classroom.googleapis.com
+    description: Google Classroom API HTTP API.
+    resources:
+    - name: v1-courses
+      path: /v1/courses
+      operations:
+      - name: listcourses
+        method: GET
+        description: Google Classroom List courses
+        inputParameters:
+        - name: pageSize
+          in: query
+          type: integer
+        - name: pageToken
+          in: query
+          type: string
+        - name: studentId
+          in: query
+          type: string
+        - name: teacherId
+          in: query
+          type: string
+        - name: courseStates
+          in: query
+          type: array
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: createcourse
+        method: POST
+        description: Google Classroom Create course
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: v1-courses-id
+      path: /v1/courses/{id}
+      operations:
+      - name: getcourse
+        method: GET
+        description: Google Classroom Get course
+        inputParameters:
+        - name: id
+          in: path
+          type: string
+          required: true
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: updatecourse
+        method: PUT
+        description: Google Classroom Update course
+        inputParameters:
+        - name: id
+          in: path
+          type: string
+          required: true
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: patchcourse
+        method: PATCH
+        description: Google Classroom Patch course
+        inputParameters:
+        - name: id
+          in: path
+          type: string
+          required: true
+        - name: updateMask
+          in: query
+          type: string
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: deletecourse
+        method: DELETE
+        description: Google Classroom Delete course
+        inputParameters:
+        - name: id
+          in: path
+          type: string
+          required: true
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: v1-courses-courseid-coursework
+      path: /v1/courses/{courseId}/courseWork
+      operations:
+      - name: listcoursework
+        method: GET
+        description: Google Classroom List course work
+        inputParameters:
+        - name: courseId
+          in: path
+          type: string
+          required: true
+        - name: pageSize
+          in: query
+          type: integer
+        - name: pageToken
+          in: query
+          type: string
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: createcoursework
+        method: POST
+        description: Google Classroom Create course work
+        inputParameters:
+        - name: courseId
+          in: path
+          type: string
+          required: true
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: v1-courses-courseid-coursework-id
+      path: /v1/courses/{courseId}/courseWork/{id}
+      operations:
+      - name: getcoursework
+        method: GET
+        description: Google Classroom Get course work
+        inputParameters:
+        - name: courseId
+          in: path
+          type: string
+          required: true
+        - name: id
+          in: path
+          type: string
+          required: true
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: patchcoursework
+        method: PATCH
+        description: Google Classroom Patch course work
+        inputParameters:
+        - name: courseId
+          in: path
+          type: string
+          required: true
+        - name: id
+          in: path
+          type: string
+          required: true
+        - name: updateMask
+          in: query
+          type: string
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: deletecoursework
+        method: DELETE
+        description: Google Classroom Delete course work
+        inputParameters:
+        - name: courseId
+          in: path
+          type: string
+          required: true
+        - name: id
+          in: path
+          type: string
+          required: true
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: v1-courses-courseid-coursework-courseworkid-stud
+      path: /v1/courses/{courseId}/courseWork/{courseWorkId}/studentSubmissions
+      operations:
+      - name: liststudentsubmissions
+        method: GET
+        description: Google Classroom List student submissions
+        inputParameters:
+        - name: courseId
+          in: path
+          type: string
+          required: true
+        - name: courseWorkId
+          in: path
+          type: string
+          required: true
+        - name: pageSize
+          in: query
+          type: integer
+        - name: pageToken
+          in: query
+          type: string
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: v1-courses-courseid-students
+      path: /v1/courses/{courseId}/students
+      operations:
+      - name: liststudents
+        method: GET
+        description: Google Classroom List students
+        inputParameters:
+        - name: courseId
+          in: path
+          type: string
+          required: true
+        - name: pageSize
+          in: query
+          type: integer
+        - name: pageToken
+          in: query
+          type: string
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: addstudent
+        method: POST
+        description: Google Classroom Add student
+        inputParameters:
+        - name: courseId
+          in: path
+          type: string
+          required: true
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: v1-courses-courseid-teachers
+      path: /v1/courses/{courseId}/teachers
+      operations:
+      - name: listteachers
+        method: GET
+        description: Google Classroom List teachers
+        inputParameters:
+        - name: courseId
+          in: path
+          type: string
+          required: true
+        - name: pageSize
+          in: query
+          type: integer
+        - name: pageToken
+          in: query
+          type: string
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: addteacher
+        method: POST
+        description: Google Classroom Add teacher
+        inputParameters:
+        - name: courseId
+          in: path
+          type: string
+          required: true
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: v1-courses-courseid-announcements
+      path: /v1/courses/{courseId}/announcements
+      operations:
+      - name: listannouncements
+        method: GET
+        description: Google Classroom List announcements
+        inputParameters:
+        - name: courseId
+          in: path
+          type: string
+          required: true
+        - name: pageSize
+          in: query
+          type: integer
+        - name: pageToken
+          in: query
+          type: string
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: createannouncement
+        method: POST
+        description: Google Classroom Create announcement
+        inputParameters:
+        - name: courseId
+          in: path
+          type: string
+          required: true
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: v1-courses-courseid-topics
+      path: /v1/courses/{courseId}/topics
+      operations:
+      - name: listtopics
+        method: GET
+        description: Google Classroom List topics
+        inputParameters:
+        - name: courseId
+          in: path
+          type: string
+          required: true
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: createtopic
+        method: POST
+        description: Google Classroom Create topic
+        inputParameters:
+        - name: courseId
+          in: path
+          type: string
+          required: true
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: v1-invitations
+      path: /v1/invitations
+      operations:
+      - name: listinvitations
+        method: GET
+        description: Google Classroom List invitations
+        inputParameters:
+        - name: courseId
+          in: query
+          type: string
+        - name: userId
+          in: query
+          type: string
+        - name: pageSize
+          in: query
+          type: integer
+        - name: pageToken
+          in: query
+          type: string
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: createinvitation
+        method: POST
+        description: Google Classroom Create invitation
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: v1-userprofiles-userid
+      path: /v1/userProfiles/{userId}
+      operations:
+      - name: getuserprofile
+        method: GET
+        description: Google Classroom Get user profile
+        inputParameters:
+        - name: userId
+          in: path
+          type: string
+          required: true
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+  exposes:
+  - type: rest
+    port: 8080
+    namespace: google-classroom-rest
+    description: REST adapter for Google Classroom API.
+    resources:
+    - path: /v1/courses
+      name: listcourses
+      operations:
+      - method: GET
+        name: listcourses
+        description: Google Classroom List courses
+        call: google-classroom.listcourses
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/courses
+      name: createcourse
+      operations:
+      - method: POST
+        name: createcourse
+        description: Google Classroom Create course
+        call: google-classroom.createcourse
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/courses/{id}
+      name: getcourse
+      operations:
+      - method: GET
+        name: getcourse
+        description: Google Classroom Get course
+        call: google-classroom.getcourse
+        with:
+          id: rest.id
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/courses/{id}
+      name: updatecourse
+      operations:
+      - method: PUT
+        name: updatecourse
+        description: Google Classroom Update course
+        call: google-classroom.updatecourse
+        with:
+          id: rest.id
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/courses/{id}
+      name: patchcourse
+      operations:
+      - method: PATCH
+        name: patchcourse
+        description: Google Classroom Patch course
+        call: google-classroom.patchcourse
+        with:
+          id: rest.id
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/courses/{id}
+      name: deletecourse
+      operations:
+      - method: DELETE
+        name: deletecourse
+        description: Google Classroom Delete course
+        call: google-classroom.deletecourse
+        with:
+          id: rest.id
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/courses/{courseId}/courseWork
+      name: listcoursework
+      operations:
+      - method: GET
+        name: listcoursework
+        description: Google Classroom List course work
+        call: google-classroom.listcoursework
+        with:
+          courseId: rest.courseId
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/courses/{courseId}/courseWork
+      name: createcoursework
+      operations:
+      - method: POST
+        name: createcoursework
+        description: Google Classroom Create course work
+        call: google-classroom.createcoursework
+        with:
+          courseId: rest.courseId
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/courses/{courseId}/courseWork/{id}
+      name: getcoursework
+      operations:
+      - method: GET
+        name: getcoursework
+        description: Google Classroom Get course work
+        call: google-classroom.getcoursework
+        with:
+          courseId: rest.courseId
+          id: rest.id
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/courses/{courseId}/courseWork/{id}
+      name: patchcoursework
+      operations:
+      - method: PATCH
+        name: patchcoursework
+        description: Google Classroom Patch course work
+        call: google-classroom.patchcoursework
+        with:
+          courseId: rest.courseId
+          id: rest.id
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/courses/{courseId}/courseWork/{id}
+      name: deletecoursework
+      operations:
+      - method: DELETE
+        name: deletecoursework
+        description: Google Classroom Delete course work
+        call: google-classroom.deletecoursework
+        with:
+          courseId: rest.courseId
+          id: rest.id
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/courses/{courseId}/courseWork/{courseWorkId}/studentSubmissions
+      name: liststudentsubmissions
+      operations:
+      - method: GET
+        name: liststudentsubmissions
+        description: Google Classroom List student submissions
+        call: google-classroom.liststudentsubmissions
+        with:
+          courseId: rest.courseId
+          courseWorkId: rest.courseWorkId
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/courses/{courseId}/students
+      name: liststudents
+      operations:
+      - method: GET
+        name: liststudents
+        description: Google Classroom List students
+        call: google-classroom.liststudents
+        with:
+          courseId: rest.courseId
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/courses/{courseId}/students
+      name: addstudent
+      operations:
+      - method: POST
+        name: addstudent
+        description: Google Classroom Add student
+        call: google-classroom.addstudent
+        with:
+          courseId: rest.courseId
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/courses/{courseId}/teachers
+      name: listteachers
+      operations:
+      - method: GET
+        name: listteachers
+        description: Google Classroom List teachers
+        call: google-classroom.listteachers
+        with:
+          courseId: rest.courseId
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/courses/{courseId}/teachers
+      name: addteacher
+      operations:
+      - method: POST
+        name: addteacher
+        description: Google Classroom Add teacher
+        call: google-classroom.addteacher
+        with:
+          courseId: rest.courseId
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/courses/{courseId}/announcements
+      name: listannouncements
+      operations:
+      - method: GET
+        name: listannouncements
+        description: Google Classroom List announcements
+        call: google-classroom.listannouncements
+        with:
+          courseId: rest.courseId
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/courses/{courseId}/announcements
+      name: createannouncement
+      operations:
+      - method: POST
+        name: createannouncement
+        description: Google Classroom Create announcement
+        call: google-classroom.createannouncement
+        with:
+          courseId: rest.courseId
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/courses/{courseId}/topics
+      name: listtopics
+      operations:
+      - method: GET
+        name: listtopics
+        description: Google Classroom List topics
+        call: google-classroom.listtopics
+        with:
+          courseId: rest.courseId
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/courses/{courseId}/topics
+      name: createtopic
+      operations:
+      - method: POST
+        name: createtopic
+        description: Google Classroom Create topic
+        call: google-classroom.createtopic
+        with:
+          courseId: rest.courseId
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/invitations
+      name: listinvitations
+      operations:
+      - method: GET
+        name: listinvitations
+        description: Google Classroom List invitations
+        call: google-classroom.listinvitations
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/invitations
+      name: createinvitation
+      operations:
+      - method: POST
+        name: createinvitation
+        description: Google Classroom Create invitation
+        call: google-classroom.createinvitation
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/userProfiles/{userId}
+      name: getuserprofile
+      operations:
+      - method: GET
+        name: getuserprofile
+        description: Google Classroom Get user profile
+        call: google-classroom.getuserprofile
+        with:
+          userId: rest.userId
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    port: 9090
+    namespace: google-classroom-mcp
+    transport: http
+    description: MCP adapter for Google Classroom API for AI agent use.
+    tools:
+    - name: listcourses
+      description: Google Classroom List courses
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: google-classroom.listcourses
+      with:
+        pageSize: tools.pageSize
+        pageToken: tools.pageToken
+        studentId: tools.studentId
+        teacherId: tools.teacherId
+        courseStates: tools.courseStates
+      inputParameters:
+      - name: pageSize
+        type: integer
+        description: pageSize
+      - name: pageToken
+        type: string
+        description: pageToken
+      - name: studentId
+        type: string
+        description: studentId
+      - name: teacherId
+        type: string
+        description: teacherId
+      - name: courseStates
+        type: array
+        description: courseStates
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: createcourse
+      description: Google Classroom Create course
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: google-classroom.createcourse
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getcourse
+      description: Google Classroom Get course
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: google-classroom.getcourse
+      with:
+        id: tools.id
+      inputParameters:
+      - name: id
+        type: string
+        description: id
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: updatecourse
+      description: Google Classroom Update course
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: google-classroom.updatecourse
+      with:
+        id: tools.id
+      inputParameters:
+      - name: id
+        type: string
+        description: id
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: patchcourse
+      description: Google Classroom Patch course
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: google-classroom.patchcourse
+      with:
+        id: tools.id
+        updateMask: tools.updateMask
+      inputParameters:
+      - name: id
+        type: string
+        description: id
+        required: true
+      - name: updateMask
+        type: string
+        description: updateMask
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: deletecourse
+      description: Google Classroom Delete course
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: google-classroom.deletecourse
+      with:
+        id: tools.id
+      inputParameters:
+      - name: id
+        type: string
+        description: id
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: listcoursework
+      description: Google Classroom List course work
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: google-classroom.listcoursework
+      with:
+        courseId: tools.courseId
+        pageSize: tools.pageSize
+        pageToken: tools.pageToken
+      inputParameters:
+      - name: courseId
+        type: string
+        description: courseId
+        required: true
+      - name: pageSize
+        type: integer
+        description: pageSize
+      - name: pageToken
+        type: string
+        description: pageToken
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: createcoursework
+      description: Google Classroom Create course work
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: google-classroom.createcoursework
+      with:
+        courseId: tools.courseId
+      inputParameters:
+      - name: courseId
+        type: string
+        description: courseId
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getcoursework
+      description: Google Classroom Get course work
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: google-classroom.getcoursework
+      with:
+        courseId: tools.courseId
+        id: tools.id
+      inputParameters:
+      - name: courseId
+        type: string
+        description: courseId
+        required: true
+      - name: id
+        type: string
+        description: id
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: patchcoursework
+      description: Google Classroom Patch course work
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: google-classroom.patchcoursework
+      with:
+        courseId: tools.courseId
+        id: tools.id
+        updateMask: tools.updateMask
+      inputParameters:
+      - name: courseId
+        type: string
+        description: courseId
+        required: true
+      - name: id
+        type: string
+        description: id
+        required: true
+      - name: updateMask
+        type: string
+        description: updateMask
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: deletecoursework
+      description: Google Classroom Delete course work
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: google-classroom.deletecoursework
+      with:
+        courseId: tools.courseId
+        id: tools.id
+      inputParameters:
+      - name: courseId
+        type: string
+        description: courseId
+        required: true
+      - name: id
+        type: string
+        description: id
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: liststudentsubmissions
+      description: Google Classroom List student submissions
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: google-classroom.liststudentsubmissions
+      with:
+        courseId: tools.courseId
+        courseWorkId: tools.courseWorkId
+        pageSize: tools.pageSize
+        pageToken: tools.pageToken
+      inputParameters:
+      - name: courseId
+        type: string
+        description: courseId
+        required: true
+      - name: courseWorkId
+        type: string
+        description: courseWorkId
+        required: true
+      - name: pageSize
+        type: integer
+        description: pageSize
+      - name: pageToken
+        type: string
+        description: pageToken
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: liststudents
+      description: Google Classroom List students
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: google-classroom.liststudents
+      with:
+        courseId: tools.courseId
+        pageSize: tools.pageSize
+        pageToken: tools.pageToken
+      inputParameters:
+      - name: courseId
+        type: string
+        description: courseId
+        required: true
+      - name: pageSize
+        type: integer
+        description: pageSize
+      - name: pageToken
+        type: string
+        description: pageToken
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: addstudent
+      description: Google Classroom Add student
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: google-classroom.addstudent
+      with:
+        courseId: tools.courseId
+      inputParameters:
+      - name: courseId
+        type: string
+        description: courseId
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: listteachers
+      description: Google Classroom List teachers
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: google-classroom.listteachers
+      with:
+        courseId: tools.courseId
+        pageSize: tools.pageSize
+        pageToken: tools.pageToken
+      inputParameters:
+      - name: courseId
+        type: string
+        description: courseId
+        required: true
+      - name: pageSize
+        type: integer
+        description: pageSize
+      - name: pageToken
+        type: string
+        description: pageToken
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: addteacher
+      description: Google Classroom Add teacher
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: google-classroom.addteacher
+      with:
+        courseId: tools.courseId
+      inputParameters:
+      - name: courseId
+        type: string
+        description: courseId
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: listannouncements
+      description: Google Classroom List announcements
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: google-classroom.listannouncements
+      with:
+        courseId: tools.courseId
+        pageSize: tools.pageSize
+        pageToken: tools.pageToken
+      inputParameters:
+      - name: courseId
+        type: string
+        description: courseId
+        required: true
+      - name: pageSize
+        type: integer
+        description: pageSize
+      - name: pageToken
+        type: string
+        description: pageToken
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: createannouncement
+      description: Google Classroom Create announcement
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: google-classroom.createannouncement
+      with:
+        courseId: tools.courseId
+      inputParameters:
+      - name: courseId
+        type: string
+        description: courseId
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: listtopics
+      description: Google Classroom List topics
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: google-classroom.listtopics
+      with:
+        courseId: tools.courseId
+      inputParameters:
+      - name: courseId
+        type: string
+        description: courseId
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: createtopic
+      description: Google Classroom Create topic
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: google-classroom.createtopic
+      with:
+        courseId: tools.courseId
+      inputParameters:
+      - name: courseId
+        type: string
+        description: courseId
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: listinvitations
+      description: Google Classroom List invitations
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: google-classroom.listinvitations
+      with:
+        courseId: tools.courseId
+        userId: tools.userId
+        pageSize: tools.pageSize
+        pageToken: tools.pageToken
+      inputParameters:
+      - name: courseId
+        type: string
+        description: courseId
+      - name: userId
+        type: string
+        description: userId
+      - name: pageSize
+        type: integer
+        description: pageSize
+      - name: pageToken
+        type: string
+        description: pageToken
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: createinvitation
+      description: Google Classroom Create invitation
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: google-classroom.createinvitation
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getuserprofile
+      description: Google Classroom Get user profile
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: google-classroom.getuserprofile
+      with:
+        userId: tools.userId
+      inputParameters:
+      - name: userId
+        type: string
+        description: userId
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
