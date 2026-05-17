@@ -36,7 +36,7 @@ apis:
         url: openapi/openapi.yml
       - type: Authentication
         url: https://developers.google.com/workspace/classroom/auth
-      - type: Getting Started
+      - type: GettingStarted
         url: https://developers.google.com/workspace/classroom/quickstart/python
       - type: JSONSchema
         url: json-schema/json-schema.yml
@@ -51,17 +51,17 @@ apis:
 common:
   - type: Portal
     url: https://developers.google.com/workspace/classroom
-  - type: Getting Started
+  - type: GettingStarted
     url: https://developers.google.com/classroom/guides/get-started
   - type: Authentication
     url: https://developers.google.com/identity/protocols/oauth2
   - type: Pricing
     url: https://edu.google.com/workspace-for-education/editions/overview/
-  - type: Terms of Service
+  - type: TermsOfService
     url: https://developers.google.com/terms
-  - type: Privacy Policy
+  - type: PrivacyPolicy
     url: https://policies.google.com/privacy
-  - type: Status
+  - type: StatusPage
     url: https://www.google.com/appsstatus/dashboard/
   - type: Support
     url: https://developers.google.com/workspace/classroom/support
