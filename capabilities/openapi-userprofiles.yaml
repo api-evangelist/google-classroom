@@ -1,0 +1,76 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Google Classroom API — userProfiles
+  description: 'Google Classroom API — userProfiles. 1 operations. Lead operation: Google Classroom Get user profile. Self-contained
+    Naftiko capability covering one Google Classroom business surface.'
+  tags:
+  - Google Classroom
+  - userProfiles
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    GOOGLE_CLASSROOM_API_KEY: GOOGLE_CLASSROOM_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: openapi-userprofiles
+    baseUri: https://classroom.googleapis.com
+    description: Google Classroom API — userProfiles business capability. Self-contained, no shared references.
+    resources:
+    - name: v1-userProfiles-userId
+      path: /v1/userProfiles/{userId}
+      operations:
+      - name: getuserprofile
+        method: GET
+        description: Google Classroom Get user profile
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: userId
+          in: path
+          type: string
+          required: true
+  exposes:
+  - type: rest
+    namespace: openapi-userprofiles-rest
+    port: 8080
+    description: REST adapter for Google Classroom API — userProfiles. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/v1/userprofiles/{userid}
+      name: v1-userprofiles-userid
+      description: REST surface for v1-userProfiles-userId.
+      operations:
+      - method: GET
+        name: getuserprofile
+        description: Google Classroom Get user profile
+        call: openapi-userprofiles.getuserprofile
+        with:
+          userId: rest.userId
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: openapi-userprofiles-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Google Classroom API — userProfiles. One tool per consumed operation, routed inline through
+      this capability's consumes block.
+    tools:
+    - name: google-classroom-get-user-profile
+      description: Google Classroom Get user profile
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: openapi-userprofiles.getuserprofile
+      with:
+        userId: tools.userId
+      outputParameters:
+      - type: object
+        mapping: $.

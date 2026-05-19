@@ -1,0 +1,125 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Google Classroom API — Invitations
+  description: 'Google Classroom API — Invitations. 2 operations. Lead operation: Google Classroom List invitations. Self-contained
+    Naftiko capability covering one Google Classroom business surface.'
+  tags:
+  - Google Classroom
+  - Invitations
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    GOOGLE_CLASSROOM_API_KEY: GOOGLE_CLASSROOM_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: openapi-invitations
+    baseUri: https://classroom.googleapis.com
+    description: Google Classroom API — Invitations business capability. Self-contained, no shared references.
+    resources:
+    - name: v1-invitations
+      path: /v1/invitations
+      operations:
+      - name: listinvitations
+        method: GET
+        description: Google Classroom List invitations
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: courseId
+          in: query
+          type: string
+        - name: userId
+          in: query
+          type: string
+        - name: pageSize
+          in: query
+          type: integer
+        - name: pageToken
+          in: query
+          type: string
+      - name: createinvitation
+        method: POST
+        description: Google Classroom Create invitation
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+  exposes:
+  - type: rest
+    namespace: openapi-invitations-rest
+    port: 8080
+    description: REST adapter for Google Classroom API — Invitations. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/v1/invitations
+      name: v1-invitations
+      description: REST surface for v1-invitations.
+      operations:
+      - method: GET
+        name: listinvitations
+        description: Google Classroom List invitations
+        call: openapi-invitations.listinvitations
+        with:
+          courseId: rest.courseId
+          userId: rest.userId
+          pageSize: rest.pageSize
+          pageToken: rest.pageToken
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: createinvitation
+        description: Google Classroom Create invitation
+        call: openapi-invitations.createinvitation
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: openapi-invitations-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Google Classroom API — Invitations. One tool per consumed operation, routed inline through
+      this capability's consumes block.
+    tools:
+    - name: google-classroom-list-invitations
+      description: Google Classroom List invitations
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: openapi-invitations.listinvitations
+      with:
+        courseId: tools.courseId
+        userId: tools.userId
+        pageSize: tools.pageSize
+        pageToken: tools.pageToken
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: google-classroom-create-invitation
+      description: Google Classroom Create invitation
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: openapi-invitations.createinvitation
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
