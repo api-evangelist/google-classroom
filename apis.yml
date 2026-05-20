@@ -11,65 +11,67 @@ modified: '2026-05-19'
 specificationVersion: '0.19'
 type: Index
 tags:
-- Assignments
-- Classroom
-- Courses
-- Education
-- Google
-- Google Workspace
-- Students
-apis:
-- name: Google Classroom API
-  description: The Google Classroom API manages courses, coursework, student submissions, announcements, materials, rosters,
-    topics, invitations, guardians, and integrations with third-party add-ons for educational workflows.
-  humanURL: https://developers.google.com/classroom
-  baseURL: https://classroom.googleapis.com
-  properties:
-  - type: Documentation
-    url: https://developers.google.com/workspace/classroom/guides/get-started
-  - type: OpenAPI
-    url: openapi/openapi.yml
-  - type: Authentication
-    url: https://developers.google.com/workspace/classroom/auth
-  - type: GettingStarted
-    url: https://developers.google.com/workspace/classroom/quickstart/python
-  - type: JSONSchema
-    url: json-schema/json-schema.yml
-  - type: JSONLD
-    url: json-ld/json-ld.jsonld
-  - type: NaftikoCapability
-    url: capabilities/openapi-courses.yaml
-  - type: NaftikoCapability
-    url: capabilities/openapi-invitations.yaml
-  - type: NaftikoCapability
-    url: capabilities/openapi-userprofiles.yaml
-  tags:
   - Assignments
+  - Classroom
   - Courses
   - Education
+  - Google
+  - Google Workspace
   - Students
-  - Teachers
+apis:
+  - name: Google Classroom API
+    description: The Google Classroom API manages courses, coursework, student submissions, announcements, materials, rosters,
+      topics, invitations, guardians, and integrations with third-party add-ons for educational workflows.
+    humanURL: https://developers.google.com/classroom
+    baseURL: https://classroom.googleapis.com
+    properties:
+    - type: Documentation
+      url: https://developers.google.com/workspace/classroom/guides/get-started
+    - type: OpenAPI
+      url: openapi/openapi.yml
+    - type: Authentication
+      url: https://developers.google.com/workspace/classroom/auth
+    - type: GettingStarted
+      url: https://developers.google.com/workspace/classroom/quickstart/python
+    - type: JSONSchema
+      url: json-schema/json-schema.yml
+    - type: JSONLD
+      url: json-ld/json-ld.jsonld
+    - type: NaftikoCapability
+      url: capabilities/openapi-courses.yaml
+    - type: NaftikoCapability
+      url: capabilities/openapi-invitations.yaml
+    - type: NaftikoCapability
+      url: capabilities/openapi-userprofiles.yaml
+    tags:
+    - Assignments
+    - Courses
+    - Education
+    - Students
+    - Teachers
 common:
-- type: Portal
-  url: https://developers.google.com/workspace/classroom
-- type: GettingStarted
-  url: https://developers.google.com/classroom/guides/get-started
-- type: Authentication
-  url: https://developers.google.com/identity/protocols/oauth2
-- type: Pricing
-  url: https://edu.google.com/workspace-for-education/editions/overview/
-- type: TermsOfService
-  url: https://developers.google.com/terms
-- type: PrivacyPolicy
-  url: https://policies.google.com/privacy
-- type: StatusPage
-  url: https://www.google.com/appsstatus/dashboard/
-- type: Support
-  url: https://developers.google.com/workspace/classroom/support
-- type: Blog
-  url: https://workspaceupdates.googleblog.com/
-- type: JSONLD
-  url: json-ld/json-ld.jsonld
+  - type: GitHubOrganization
+    url: https://github.com/googleworkspace
+  - type: Portal
+    url: https://developers.google.com/workspace/classroom
+  - type: GettingStarted
+    url: https://developers.google.com/classroom/guides/get-started
+  - type: Authentication
+    url: https://developers.google.com/identity/protocols/oauth2
+  - type: Pricing
+    url: https://edu.google.com/workspace-for-education/editions/overview/
+  - type: TermsOfService
+    url: https://developers.google.com/terms
+  - type: PrivacyPolicy
+    url: https://policies.google.com/privacy
+  - type: StatusPage
+    url: https://www.google.com/appsstatus/dashboard/
+  - type: Support
+    url: https://developers.google.com/workspace/classroom/support
+  - type: Blog
+    url: https://workspaceupdates.googleblog.com/
+  - type: JSONLD
+    url: json-ld/json-ld.jsonld
 maintainers:
-- FN: Kin Lane
-  email: kin@apievangelist.com
+  - FN: Kin Lane
+    email: kin@apievangelist.com
