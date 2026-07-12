@@ -46,6 +46,10 @@ apis:
       - Students
       - Teachers
 common:
+  - type: VulnerabilityDisclosure
+    url: security/google-classroom-vulnerability-disclosure.yml
+  - type: DomainSecurity
+    url: security/google-classroom-domain-security.yml
   - type: GitHubOrganization
     url: https://github.com/googleworkspace
   - type: Portal
