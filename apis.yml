@@ -46,6 +46,8 @@ apis:
       - Students
       - Teachers
 common:
+  - type: AgenticAccess
+    url: agentic-access/google-classroom-agentic-access.yml
   - type: VulnerabilityDisclosure
     url: security/google-classroom-vulnerability-disclosure.yml
   - type: DomainSecurity
