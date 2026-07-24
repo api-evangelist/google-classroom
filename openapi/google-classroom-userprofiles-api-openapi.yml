@@ -1,0 +1,53 @@
+openapi: 3.1.0
+info:
+  title: Google Classroom Courses userProfiles API
+  description: The Google Classroom API manages courses, coursework, student submissions, announcements, materials, rosters, topics, invitations, guardians, and integrations with third-party add-ons for educational workflows.
+  version: v1
+  contact:
+    name: Google
+    url: https://developers.google.com/classroom
+servers:
+- url: https://classroom.googleapis.com
+tags:
+- name: userProfiles
+paths:
+  /v1/userProfiles/{userId}:
+    get:
+      operationId: getUserProfile
+      summary: Google Classroom Get user profile
+      description: Returns a user profile.
+      parameters:
+      - name: userId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserProfile'
+      tags:
+      - userProfiles
+components:
+  schemas:
+    UserProfile:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: object
+          properties:
+            givenName:
+              type: string
+            familyName:
+              type: string
+            fullName:
+              type: string
+        emailAddress:
+          type: string
+        photoUrl:
+          type: string

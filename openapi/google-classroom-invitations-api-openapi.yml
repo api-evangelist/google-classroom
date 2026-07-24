@@ -1,0 +1,76 @@
+openapi: 3.1.0
+info:
+  title: Google Classroom Courses Invitations API
+  description: The Google Classroom API manages courses, coursework, student submissions, announcements, materials, rosters, topics, invitations, guardians, and integrations with third-party add-ons for educational workflows.
+  version: v1
+  contact:
+    name: Google
+    url: https://developers.google.com/classroom
+servers:
+- url: https://classroom.googleapis.com
+tags:
+- name: Invitations
+paths:
+  /v1/invitations:
+    get:
+      operationId: listInvitations
+      summary: Google Classroom List invitations
+      description: Returns a list of invitations.
+      parameters:
+      - name: courseId
+        in: query
+        schema:
+          type: string
+      - name: userId
+        in: query
+        schema:
+          type: string
+      - name: pageSize
+        in: query
+        schema:
+          type: integer
+      - name: pageToken
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+      tags:
+      - Invitations
+    post:
+      operationId: createInvitation
+      summary: Google Classroom Create invitation
+      description: Creates an invitation.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Invitation'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Invitation'
+      tags:
+      - Invitations
+components:
+  schemas:
+    Invitation:
+      type: object
+      properties:
+        id:
+          type: string
+        userId:
+          type: string
+        courseId:
+          type: string
+        role:
+          type: string
+          enum:
+          - COURSE_ROLE_UNSPECIFIED
+          - STUDENT
+          - TEACHER
+          - OWNER
