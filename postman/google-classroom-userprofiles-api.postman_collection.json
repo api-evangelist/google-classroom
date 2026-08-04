@@ -1,0 +1,132 @@
+{
+  "info": {
+    "_postman_id": "540d234d-66a8-4adc-a229-f1fd51bc9da7",
+    "name": "Google Classroom Courses userProfiles API",
+    "description": "The Google Classroom API manages courses, coursework, student submissions, announcements, materials, rosters, topics, invitations, guardians, and integrations with third-party add-ons for educational workflows.\n\nContact Support:\n Name: Google",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:45:48.000Z",
+    "updatedAt": "2026-07-28T01:45:48.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-540d234d-66a8-4adc-a229-f1fd51bc9da7"
+  },
+  "item": [
+    {
+      "name": "v1",
+      "item": [
+        {
+          "name": "userProfiles",
+          "item": [
+            {
+              "name": "{userId}",
+              "item": [
+                {
+                  "name": "Google Classroom Get user profile",
+                  "id": "899bc206-dbe5-45d6-b07d-45063bd29c6b",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/v1/userProfiles/:userId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "v1",
+                        "userProfiles",
+                        ":userId"
+                      ],
+                      "variable": [
+                        {
+                          "id": "ab2eaa8d-7357-4b1e-8816-1675793bbd9a",
+                          "key": "userId",
+                          "value": "<string>",
+                          "description": "(Required) "
+                        }
+                      ]
+                    },
+                    "description": "Returns a user profile."
+                  },
+                  "response": [
+                    {
+                      "id": "360c072a-2225-40e8-a919-739f1c52f134",
+                      "name": "Successful response",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/v1/userProfiles/:userId",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "v1",
+                            "userProfiles",
+                            ":userId"
+                          ],
+                          "variable": [
+                            {
+                              "key": "userId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"id\": \"<string>\",\n  \"name\": {\n    \"givenName\": \"<string>\",\n    \"familyName\": \"<string>\",\n    \"fullName\": \"<string>\"\n  },\n  \"emailAddress\": \"<string>\",\n  \"photoUrl\": \"<string>\"\n}",
+                      "createdAt": "2026-07-28T01:45:49.000Z",
+                      "updatedAt": "2026-07-28T01:45:49.000Z",
+                      "uid": "35240-360c072a-2225-40e8-a919-739f1c52f134"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T01:45:49.000Z",
+                  "updatedAt": "2026-07-28T01:45:49.000Z",
+                  "uid": "35240-899bc206-dbe5-45d6-b07d-45063bd29c6b"
+                }
+              ],
+              "id": "2ef64f30-0c92-4a71-a1ff-56dd3824d3a7",
+              "createdAt": "2026-07-28T01:45:49.000Z",
+              "updatedAt": "2026-07-28T01:45:49.000Z",
+              "uid": "35240-2ef64f30-0c92-4a71-a1ff-56dd3824d3a7"
+            }
+          ],
+          "id": "4ef56d63-84f9-4a46-b23b-ccb0a5e85968",
+          "createdAt": "2026-07-28T01:45:49.000Z",
+          "updatedAt": "2026-07-28T01:45:49.000Z",
+          "uid": "35240-4ef56d63-84f9-4a46-b23b-ccb0a5e85968"
+        }
+      ],
+      "id": "d6e0bbcd-9fc5-4671-b2b8-7a13db37e592",
+      "createdAt": "2026-07-28T01:45:49.000Z",
+      "updatedAt": "2026-07-28T01:45:49.000Z",
+      "uid": "35240-d6e0bbcd-9fc5-4671-b2b8-7a13db37e592"
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://classroom.googleapis.com"
+    }
+  ]
+}

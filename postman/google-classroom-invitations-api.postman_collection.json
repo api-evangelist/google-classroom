@@ -1,0 +1,227 @@
+{
+  "info": {
+    "_postman_id": "d436f4b7-8a27-4c27-887f-4410bb418bdc",
+    "name": "Google Classroom Courses Invitations API",
+    "description": "The Google Classroom API manages courses, coursework, student submissions, announcements, materials, rosters, topics, invitations, guardians, and integrations with third-party add-ons for educational workflows.\n\nContact Support:\n Name: Google",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:45:19.000Z",
+    "updatedAt": "2026-07-28T01:45:19.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-d436f4b7-8a27-4c27-887f-4410bb418bdc"
+  },
+  "item": [
+    {
+      "name": "v1",
+      "item": [
+        {
+          "name": "invitations",
+          "item": [
+            {
+              "name": "Google Classroom List invitations",
+              "id": "ca8d0bd5-e04a-4a5b-b6c2-0b5c12716bbe",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/v1/invitations?courseId=<string>&userId=<string>&pageSize=<integer>&pageToken=<string>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "v1",
+                    "invitations"
+                  ],
+                  "query": [
+                    {
+                      "key": "courseId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "userId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageSize",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "pageToken",
+                      "value": "<string>"
+                    }
+                  ]
+                },
+                "description": "Returns a list of invitations."
+              },
+              "response": [
+                {
+                  "id": "6cd5f842-5c81-446b-8178-ded4afca00e9",
+                  "name": "Successful response",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [],
+                    "url": {
+                      "raw": "{{baseUrl}}/v1/invitations?courseId=<string>&userId=<string>&pageSize=<integer>&pageToken=<string>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "v1",
+                        "invitations"
+                      ],
+                      "query": [
+                        {
+                          "key": "courseId",
+                          "value": "<string>"
+                        },
+                        {
+                          "key": "userId",
+                          "value": "<string>"
+                        },
+                        {
+                          "key": "pageSize",
+                          "value": "<integer>"
+                        },
+                        {
+                          "key": "pageToken",
+                          "value": "<string>"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-07-28T01:45:19.000Z",
+                  "updatedAt": "2026-07-28T01:45:19.000Z",
+                  "uid": "35240-6cd5f842-5c81-446b-8178-ded4afca00e9"
+                }
+              ],
+              "createdAt": "2026-07-28T01:45:19.000Z",
+              "updatedAt": "2026-07-28T01:45:19.000Z",
+              "uid": "35240-ca8d0bd5-e04a-4a5b-b6c2-0b5c12716bbe"
+            },
+            {
+              "name": "Google Classroom Create invitation",
+              "id": "05619497-ebe7-4bd4-8390-60a74386b9dd",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"id\": \"<string>\",\n  \"userId\": \"<string>\",\n  \"courseId\": \"<string>\",\n  \"role\": \"OWNER\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/v1/invitations",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "v1",
+                    "invitations"
+                  ]
+                },
+                "description": "Creates an invitation."
+              },
+              "response": [
+                {
+                  "id": "5e0e9884-9178-4f73-bfee-33dae69c442d",
+                  "name": "Successful response",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"id\": \"<string>\",\n  \"userId\": \"<string>\",\n  \"courseId\": \"<string>\",\n  \"role\": \"OWNER\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/v1/invitations",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "v1",
+                        "invitations"
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"id\": \"<string>\",\n  \"userId\": \"<string>\",\n  \"courseId\": \"<string>\",\n  \"role\": \"OWNER\"\n}",
+                  "createdAt": "2026-07-28T01:45:19.000Z",
+                  "updatedAt": "2026-07-28T01:45:19.000Z",
+                  "uid": "35240-5e0e9884-9178-4f73-bfee-33dae69c442d"
+                }
+              ],
+              "createdAt": "2026-07-28T01:45:19.000Z",
+              "updatedAt": "2026-07-28T01:45:19.000Z",
+              "uid": "35240-05619497-ebe7-4bd4-8390-60a74386b9dd"
+            }
+          ],
+          "id": "27b67279-6f4c-4a9b-8afd-30706f45d61e",
+          "createdAt": "2026-07-28T01:45:19.000Z",
+          "updatedAt": "2026-07-28T01:45:19.000Z",
+          "uid": "35240-27b67279-6f4c-4a9b-8afd-30706f45d61e"
+        }
+      ],
+      "id": "46f437bf-4b74-4912-aedb-f095f88efb17",
+      "createdAt": "2026-07-28T01:45:19.000Z",
+      "updatedAt": "2026-07-28T01:45:19.000Z",
+      "uid": "35240-46f437bf-4b74-4912-aedb-f095f88efb17"
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://classroom.googleapis.com"
+    }
+  ]
+}

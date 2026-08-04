@@ -1,0 +1,18 @@
+{
+  "provider": "google-classroom",
+  "sources": [
+    "google-classroom-courses-api-openapi.yml",
+    "google-classroom-invitations-api-openapi.yml",
+    "google-classroom-userprofiles-api-openapi.yml"
+  ],
+  "outputs": [
+    "google-classroom-courses-api-openapi.yml",
+    "google-classroom-invitations-api-openapi.yml",
+    "google-classroom-userprofiles-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

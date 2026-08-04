@@ -1,0 +1,2236 @@
+{
+  "info": {
+    "_postman_id": "3e47e0f9-6b49-4dd9-b34f-096688fa0d52",
+    "name": "Google Classroom Courses API",
+    "description": "The Google Classroom API manages courses, coursework, student submissions, announcements, materials, rosters, topics, invitations, guardians, and integrations with third-party add-ons for educational workflows.\n\nContact Support:\n Name: Google",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:45:18.000Z",
+    "updatedAt": "2026-07-28T01:45:18.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-3e47e0f9-6b49-4dd9-b34f-096688fa0d52"
+  },
+  "item": [
+    {
+      "name": "v1",
+      "item": [
+        {
+          "name": "courses",
+          "item": [
+            {
+              "name": "{id}",
+              "item": [
+                {
+                  "name": "Google Classroom Get course",
+                  "id": "617da5be-c6f8-4175-be2d-94795592fbcd",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/v1/courses/:id",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "v1",
+                        "courses",
+                        ":id"
+                      ],
+                      "variable": [
+                        {
+                          "id": "144e530a-a587-4d2e-9414-b4992197ee8b",
+                          "key": "id",
+                          "value": "<string>",
+                          "description": "(Required) "
+                        }
+                      ]
+                    },
+                    "description": "Returns a course."
+                  },
+                  "response": [
+                    {
+                      "id": "7efbabbe-5f02-4f4d-8a2a-f62760d1a64e",
+                      "name": "Successful response",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/v1/courses/:id",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "v1",
+                            "courses",
+                            ":id"
+                          ],
+                          "variable": [
+                            {
+                              "key": "id"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"section\": \"<string>\",\n  \"descriptionHeading\": \"<string>\",\n  \"description\": \"<string>\",\n  \"room\": \"<string>\",\n  \"ownerId\": \"<string>\",\n  \"courseState\": \"SUSPENDED\",\n  \"enrollmentCode\": \"<string>\",\n  \"creationTime\": \"<dateTime>\",\n  \"updateTime\": \"<dateTime>\"\n}",
+                      "createdAt": "2026-07-28T01:45:18.000Z",
+                      "updatedAt": "2026-07-28T01:45:18.000Z",
+                      "uid": "35240-7efbabbe-5f02-4f4d-8a2a-f62760d1a64e"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T01:45:18.000Z",
+                  "updatedAt": "2026-07-28T01:45:18.000Z",
+                  "uid": "35240-617da5be-c6f8-4175-be2d-94795592fbcd"
+                },
+                {
+                  "name": "Google Classroom Update course",
+                  "id": "f65992d1-13d1-4d31-80d2-38b475dc8be3",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"section\": \"<string>\",\n  \"descriptionHeading\": \"<string>\",\n  \"description\": \"<string>\",\n  \"room\": \"<string>\",\n  \"ownerId\": \"<string>\",\n  \"courseState\": \"SUSPENDED\",\n  \"enrollmentCode\": \"<string>\",\n  \"creationTime\": \"<dateTime>\",\n  \"updateTime\": \"<dateTime>\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/v1/courses/:id",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "v1",
+                        "courses",
+                        ":id"
+                      ],
+                      "variable": [
+                        {
+                          "id": "e7221e8d-7d5d-4a3d-baff-f83261454f41",
+                          "key": "id",
+                          "value": "<string>",
+                          "description": "(Required) "
+                        }
+                      ]
+                    },
+                    "description": "Updates a course."
+                  },
+                  "response": [
+                    {
+                      "id": "de42a2bd-47ee-42de-81a6-0c2d27093e0f",
+                      "name": "Successful response",
+                      "originalRequest": {
+                        "method": "PUT",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"section\": \"<string>\",\n  \"descriptionHeading\": \"<string>\",\n  \"description\": \"<string>\",\n  \"room\": \"<string>\",\n  \"ownerId\": \"<string>\",\n  \"courseState\": \"SUSPENDED\",\n  \"enrollmentCode\": \"<string>\",\n  \"creationTime\": \"<dateTime>\",\n  \"updateTime\": \"<dateTime>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/v1/courses/:id",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "v1",
+                            "courses",
+                            ":id"
+                          ],
+                          "variable": [
+                            {
+                              "key": "id"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"section\": \"<string>\",\n  \"descriptionHeading\": \"<string>\",\n  \"description\": \"<string>\",\n  \"room\": \"<string>\",\n  \"ownerId\": \"<string>\",\n  \"courseState\": \"SUSPENDED\",\n  \"enrollmentCode\": \"<string>\",\n  \"creationTime\": \"<dateTime>\",\n  \"updateTime\": \"<dateTime>\"\n}",
+                      "createdAt": "2026-07-28T01:45:18.000Z",
+                      "updatedAt": "2026-07-28T01:45:18.000Z",
+                      "uid": "35240-de42a2bd-47ee-42de-81a6-0c2d27093e0f"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T01:45:18.000Z",
+                  "updatedAt": "2026-07-28T01:45:18.000Z",
+                  "uid": "35240-f65992d1-13d1-4d31-80d2-38b475dc8be3"
+                },
+                {
+                  "name": "Google Classroom Patch course",
+                  "id": "0185dce2-e19d-413b-bf61-54ecf0486700",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "PATCH",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"section\": \"<string>\",\n  \"descriptionHeading\": \"<string>\",\n  \"description\": \"<string>\",\n  \"room\": \"<string>\",\n  \"ownerId\": \"<string>\",\n  \"courseState\": \"SUSPENDED\",\n  \"enrollmentCode\": \"<string>\",\n  \"creationTime\": \"<dateTime>\",\n  \"updateTime\": \"<dateTime>\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/v1/courses/:id?updateMask=<string>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "v1",
+                        "courses",
+                        ":id"
+                      ],
+                      "query": [
+                        {
+                          "key": "updateMask",
+                          "value": "<string>"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "id": "1e4c7cd2-a546-4f95-a0ae-6b60aa00e24c",
+                          "key": "id",
+                          "value": "<string>",
+                          "description": "(Required) "
+                        }
+                      ]
+                    },
+                    "description": "Updates one or more fields in a course."
+                  },
+                  "response": [
+                    {
+                      "id": "3d07380a-aa70-4f41-aefc-a3e4abf3c09b",
+                      "name": "Successful response",
+                      "originalRequest": {
+                        "method": "PATCH",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"section\": \"<string>\",\n  \"descriptionHeading\": \"<string>\",\n  \"description\": \"<string>\",\n  \"room\": \"<string>\",\n  \"ownerId\": \"<string>\",\n  \"courseState\": \"SUSPENDED\",\n  \"enrollmentCode\": \"<string>\",\n  \"creationTime\": \"<dateTime>\",\n  \"updateTime\": \"<dateTime>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/v1/courses/:id?updateMask=<string>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "v1",
+                            "courses",
+                            ":id"
+                          ],
+                          "query": [
+                            {
+                              "key": "updateMask",
+                              "value": "<string>"
+                            }
+                          ],
+                          "variable": [
+                            {
+                              "key": "id"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"section\": \"<string>\",\n  \"descriptionHeading\": \"<string>\",\n  \"description\": \"<string>\",\n  \"room\": \"<string>\",\n  \"ownerId\": \"<string>\",\n  \"courseState\": \"SUSPENDED\",\n  \"enrollmentCode\": \"<string>\",\n  \"creationTime\": \"<dateTime>\",\n  \"updateTime\": \"<dateTime>\"\n}",
+                      "createdAt": "2026-07-28T01:45:18.000Z",
+                      "updatedAt": "2026-07-28T01:45:18.000Z",
+                      "uid": "35240-3d07380a-aa70-4f41-aefc-a3e4abf3c09b"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T01:45:18.000Z",
+                  "updatedAt": "2026-07-28T01:45:18.000Z",
+                  "uid": "35240-0185dce2-e19d-413b-bf61-54ecf0486700"
+                },
+                {
+                  "name": "Google Classroom Delete course",
+                  "id": "ceea26f7-105a-462b-82c6-6705cfbf7490",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "DELETE",
+                    "header": [],
+                    "url": {
+                      "raw": "{{baseUrl}}/v1/courses/:id",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "v1",
+                        "courses",
+                        ":id"
+                      ],
+                      "variable": [
+                        {
+                          "id": "ceab31dc-43f3-4007-8cc6-8f91e7421b25",
+                          "key": "id",
+                          "value": "<string>",
+                          "description": "(Required) "
+                        }
+                      ]
+                    },
+                    "description": "Deletes a course."
+                  },
+                  "response": [
+                    {
+                      "id": "19323347-f041-40c3-b786-e40cb6897ffb",
+                      "name": "Successful deletion",
+                      "originalRequest": {
+                        "method": "DELETE",
+                        "header": [],
+                        "url": {
+                          "raw": "{{baseUrl}}/v1/courses/:id",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "v1",
+                            "courses",
+                            ":id"
+                          ],
+                          "variable": [
+                            {
+                              "key": "id"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "No Content",
+                      "code": 204,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T01:45:18.000Z",
+                      "updatedAt": "2026-07-28T01:45:18.000Z",
+                      "uid": "35240-19323347-f041-40c3-b786-e40cb6897ffb"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T01:45:18.000Z",
+                  "updatedAt": "2026-07-28T01:45:18.000Z",
+                  "uid": "35240-ceea26f7-105a-462b-82c6-6705cfbf7490"
+                }
+              ],
+              "id": "ef6ec83d-b295-415e-b5a4-6be897bf913c",
+              "createdAt": "2026-07-28T01:45:18.000Z",
+              "updatedAt": "2026-07-28T01:45:18.000Z",
+              "uid": "35240-ef6ec83d-b295-415e-b5a4-6be897bf913c"
+            },
+            {
+              "name": "{courseId}",
+              "item": [
+                {
+                  "name": "courseWork",
+                  "item": [
+                    {
+                      "name": "{id}",
+                      "item": [
+                        {
+                          "name": "Google Classroom Get course work",
+                          "id": "e8dc1bf4-b603-4dca-b413-d440513d88dd",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/v1/courses/:courseId/courseWork/:id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "v1",
+                                "courses",
+                                ":courseId",
+                                "courseWork",
+                                ":id"
+                              ],
+                              "variable": [
+                                {
+                                  "id": "1d15d263-38a7-4c11-b9c4-cb9b3adabffd",
+                                  "key": "courseId",
+                                  "value": "<string>",
+                                  "description": "(Required) "
+                                },
+                                {
+                                  "id": "807ce729-daf7-4cce-b4dc-b006a8c270bf",
+                                  "key": "id",
+                                  "value": "<string>",
+                                  "description": "(Required) "
+                                }
+                              ]
+                            },
+                            "description": "Returns course work."
+                          },
+                          "response": [
+                            {
+                              "id": "2cb0abb7-ce67-47a1-9730-640132e7b994",
+                              "name": "Successful response",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/v1/courses/:courseId/courseWork/:id",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "v1",
+                                    "courses",
+                                    ":courseId",
+                                    "courseWork",
+                                    ":id"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "courseId"
+                                    },
+                                    {
+                                      "key": "id"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"courseId\": \"<string>\",\n  \"id\": \"<string>\",\n  \"title\": \"<string>\",\n  \"description\": \"<string>\",\n  \"state\": \"DRAFT\",\n  \"workType\": \"MULTIPLE_CHOICE_QUESTION\",\n  \"maxPoints\": \"<number>\",\n  \"dueDate\": {\n    \"year\": \"<integer>\",\n    \"month\": \"<integer>\",\n    \"day\": \"<integer>\"\n  },\n  \"dueTime\": {\n    \"hours\": \"<integer>\",\n    \"minutes\": \"<integer>\"\n  },\n  \"creationTime\": \"<dateTime>\",\n  \"updateTime\": \"<dateTime>\"\n}",
+                              "createdAt": "2026-07-28T01:45:18.000Z",
+                              "updatedAt": "2026-07-28T01:45:18.000Z",
+                              "uid": "35240-2cb0abb7-ce67-47a1-9730-640132e7b994"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T01:45:18.000Z",
+                          "updatedAt": "2026-07-28T01:45:18.000Z",
+                          "uid": "35240-e8dc1bf4-b603-4dca-b413-d440513d88dd"
+                        },
+                        {
+                          "name": "Google Classroom Patch course work",
+                          "id": "eda1102e-a451-4556-81dd-0e2a168cdf09",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "PATCH",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"courseId\": \"<string>\",\n  \"id\": \"<string>\",\n  \"title\": \"<string>\",\n  \"description\": \"<string>\",\n  \"state\": \"DRAFT\",\n  \"workType\": \"MULTIPLE_CHOICE_QUESTION\",\n  \"maxPoints\": \"<number>\",\n  \"dueDate\": {\n    \"year\": \"<integer>\",\n    \"month\": \"<integer>\",\n    \"day\": \"<integer>\"\n  },\n  \"dueTime\": {\n    \"hours\": \"<integer>\",\n    \"minutes\": \"<integer>\"\n  },\n  \"creationTime\": \"<dateTime>\",\n  \"updateTime\": \"<dateTime>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/v1/courses/:courseId/courseWork/:id?updateMask=<string>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "v1",
+                                "courses",
+                                ":courseId",
+                                "courseWork",
+                                ":id"
+                              ],
+                              "query": [
+                                {
+                                  "key": "updateMask",
+                                  "value": "<string>"
+                                }
+                              ],
+                              "variable": [
+                                {
+                                  "id": "ae31c351-1789-4e56-bca3-5cb259cd729f",
+                                  "key": "courseId",
+                                  "value": "<string>",
+                                  "description": "(Required) "
+                                },
+                                {
+                                  "id": "5ee68011-b122-4059-9495-84275766ceda",
+                                  "key": "id",
+                                  "value": "<string>",
+                                  "description": "(Required) "
+                                }
+                              ]
+                            },
+                            "description": "Updates one or more fields of a course work."
+                          },
+                          "response": [
+                            {
+                              "id": "e96b7d69-9308-4730-8d7f-234463e28415",
+                              "name": "Successful response",
+                              "originalRequest": {
+                                "method": "PATCH",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"courseId\": \"<string>\",\n  \"id\": \"<string>\",\n  \"title\": \"<string>\",\n  \"description\": \"<string>\",\n  \"state\": \"DRAFT\",\n  \"workType\": \"MULTIPLE_CHOICE_QUESTION\",\n  \"maxPoints\": \"<number>\",\n  \"dueDate\": {\n    \"year\": \"<integer>\",\n    \"month\": \"<integer>\",\n    \"day\": \"<integer>\"\n  },\n  \"dueTime\": {\n    \"hours\": \"<integer>\",\n    \"minutes\": \"<integer>\"\n  },\n  \"creationTime\": \"<dateTime>\",\n  \"updateTime\": \"<dateTime>\"\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/v1/courses/:courseId/courseWork/:id?updateMask=<string>",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "v1",
+                                    "courses",
+                                    ":courseId",
+                                    "courseWork",
+                                    ":id"
+                                  ],
+                                  "query": [
+                                    {
+                                      "key": "updateMask",
+                                      "value": "<string>"
+                                    }
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "courseId"
+                                    },
+                                    {
+                                      "key": "id"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"courseId\": \"<string>\",\n  \"id\": \"<string>\",\n  \"title\": \"<string>\",\n  \"description\": \"<string>\",\n  \"state\": \"DRAFT\",\n  \"workType\": \"MULTIPLE_CHOICE_QUESTION\",\n  \"maxPoints\": \"<number>\",\n  \"dueDate\": {\n    \"year\": \"<integer>\",\n    \"month\": \"<integer>\",\n    \"day\": \"<integer>\"\n  },\n  \"dueTime\": {\n    \"hours\": \"<integer>\",\n    \"minutes\": \"<integer>\"\n  },\n  \"creationTime\": \"<dateTime>\",\n  \"updateTime\": \"<dateTime>\"\n}",
+                              "createdAt": "2026-07-28T01:45:18.000Z",
+                              "updatedAt": "2026-07-28T01:45:18.000Z",
+                              "uid": "35240-e96b7d69-9308-4730-8d7f-234463e28415"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T01:45:18.000Z",
+                          "updatedAt": "2026-07-28T01:45:18.000Z",
+                          "uid": "35240-eda1102e-a451-4556-81dd-0e2a168cdf09"
+                        },
+                        {
+                          "name": "Google Classroom Delete course work",
+                          "id": "c084cfec-32e2-441d-ac3e-1ccfe2f5fc63",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "DELETE",
+                            "header": [],
+                            "url": {
+                              "raw": "{{baseUrl}}/v1/courses/:courseId/courseWork/:id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "v1",
+                                "courses",
+                                ":courseId",
+                                "courseWork",
+                                ":id"
+                              ],
+                              "variable": [
+                                {
+                                  "id": "afc7005e-7b15-4258-9795-64f08ca0bf7e",
+                                  "key": "courseId",
+                                  "value": "<string>",
+                                  "description": "(Required) "
+                                },
+                                {
+                                  "id": "9037ac73-dedd-4c4c-ad9c-82c69bc82f3b",
+                                  "key": "id",
+                                  "value": "<string>",
+                                  "description": "(Required) "
+                                }
+                              ]
+                            },
+                            "description": "Deletes a course work."
+                          },
+                          "response": [
+                            {
+                              "id": "4813168b-f4a6-4806-a19f-f8dbfb29a7a6",
+                              "name": "Successful deletion",
+                              "originalRequest": {
+                                "method": "DELETE",
+                                "header": [],
+                                "url": {
+                                  "raw": "{{baseUrl}}/v1/courses/:courseId/courseWork/:id",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "v1",
+                                    "courses",
+                                    ":courseId",
+                                    "courseWork",
+                                    ":id"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "courseId"
+                                    },
+                                    {
+                                      "key": "id"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "No Content",
+                              "code": 204,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T01:45:18.000Z",
+                              "updatedAt": "2026-07-28T01:45:18.000Z",
+                              "uid": "35240-4813168b-f4a6-4806-a19f-f8dbfb29a7a6"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T01:45:18.000Z",
+                          "updatedAt": "2026-07-28T01:45:18.000Z",
+                          "uid": "35240-c084cfec-32e2-441d-ac3e-1ccfe2f5fc63"
+                        }
+                      ],
+                      "id": "c8a4be6c-4bfb-4358-aa7e-ac86c53b43d1",
+                      "createdAt": "2026-07-28T01:45:18.000Z",
+                      "updatedAt": "2026-07-28T01:45:18.000Z",
+                      "uid": "35240-c8a4be6c-4bfb-4358-aa7e-ac86c53b43d1"
+                    },
+                    {
+                      "name": "{courseWorkId}",
+                      "item": [
+                        {
+                          "name": "studentSubmissions",
+                          "item": [
+                            {
+                              "name": "Google Classroom List student submissions",
+                              "id": "5367fde2-b9da-4535-a8da-de24a4ea7d9c",
+                              "protocolProfileBehavior": {
+                                "disableBodyPruning": true
+                              },
+                              "request": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/v1/courses/:courseId/courseWork/:courseWorkId/studentSubmissions?pageSize=<integer>&pageToken=<string>",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "v1",
+                                    "courses",
+                                    ":courseId",
+                                    "courseWork",
+                                    ":courseWorkId",
+                                    "studentSubmissions"
+                                  ],
+                                  "query": [
+                                    {
+                                      "key": "pageSize",
+                                      "value": "<integer>"
+                                    },
+                                    {
+                                      "key": "pageToken",
+                                      "value": "<string>"
+                                    }
+                                  ],
+                                  "variable": [
+                                    {
+                                      "id": "c54744bb-591b-4668-af9e-87dc1ae85276",
+                                      "key": "courseId",
+                                      "value": "<string>",
+                                      "description": "(Required) "
+                                    },
+                                    {
+                                      "id": "90815612-ccf2-48cf-a213-47bc9fec1c10",
+                                      "key": "courseWorkId",
+                                      "value": "<string>",
+                                      "description": "(Required) "
+                                    }
+                                  ]
+                                },
+                                "description": "Returns a list of student submissions."
+                              },
+                              "response": [
+                                {
+                                  "id": "f2a71369-1a51-493e-be77-1879ea4e6d51",
+                                  "name": "Successful response",
+                                  "originalRequest": {
+                                    "method": "GET",
+                                    "header": [
+                                      {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                      }
+                                    ],
+                                    "url": {
+                                      "raw": "{{baseUrl}}/v1/courses/:courseId/courseWork/:courseWorkId/studentSubmissions?pageSize=<integer>&pageToken=<string>",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "v1",
+                                        "courses",
+                                        ":courseId",
+                                        "courseWork",
+                                        ":courseWorkId",
+                                        "studentSubmissions"
+                                      ],
+                                      "query": [
+                                        {
+                                          "key": "pageSize",
+                                          "value": "<integer>"
+                                        },
+                                        {
+                                          "key": "pageToken",
+                                          "value": "<string>"
+                                        }
+                                      ],
+                                      "variable": [
+                                        {
+                                          "key": "courseId"
+                                        },
+                                        {
+                                          "key": "courseWorkId"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "status": "OK",
+                                  "code": 200,
+                                  "_postman_previewlanguage": "json",
+                                  "header": [
+                                    {
+                                      "key": "Content-Type",
+                                      "value": "application/json"
+                                    }
+                                  ],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": "{\n  \"studentSubmissions\": [\n    {\n      \"courseId\": \"<string>\",\n      \"courseWorkId\": \"<string>\",\n      \"id\": \"<string>\",\n      \"userId\": \"<string>\",\n      \"state\": \"RETURNED\",\n      \"assignedGrade\": \"<number>\",\n      \"draftGrade\": \"<number>\",\n      \"creationTime\": \"<dateTime>\",\n      \"updateTime\": \"<dateTime>\"\n    },\n    {\n      \"courseId\": \"<string>\",\n      \"courseWorkId\": \"<string>\",\n      \"id\": \"<string>\",\n      \"userId\": \"<string>\",\n      \"state\": \"SUBMISSION_STATE_UNSPECIFIED\",\n      \"assignedGrade\": \"<number>\",\n      \"draftGrade\": \"<number>\",\n      \"creationTime\": \"<dateTime>\",\n      \"updateTime\": \"<dateTime>\"\n    }\n  ],\n  \"nextPageToken\": \"<string>\"\n}",
+                                  "createdAt": "2026-07-28T01:45:18.000Z",
+                                  "updatedAt": "2026-07-28T01:45:18.000Z",
+                                  "uid": "35240-f2a71369-1a51-493e-be77-1879ea4e6d51"
+                                }
+                              ],
+                              "createdAt": "2026-07-28T01:45:18.000Z",
+                              "updatedAt": "2026-07-28T01:45:18.000Z",
+                              "uid": "35240-5367fde2-b9da-4535-a8da-de24a4ea7d9c"
+                            }
+                          ],
+                          "id": "2c49dfbd-9b08-4bec-b791-8f14ddea4bd7",
+                          "createdAt": "2026-07-28T01:45:18.000Z",
+                          "updatedAt": "2026-07-28T01:45:18.000Z",
+                          "uid": "35240-2c49dfbd-9b08-4bec-b791-8f14ddea4bd7"
+                        }
+                      ],
+                      "id": "56a3f847-7f2d-4530-a172-d5fe07391c83",
+                      "createdAt": "2026-07-28T01:45:18.000Z",
+                      "updatedAt": "2026-07-28T01:45:18.000Z",
+                      "uid": "35240-56a3f847-7f2d-4530-a172-d5fe07391c83"
+                    },
+                    {
+                      "name": "Google Classroom List course work",
+                      "id": "73c99972-60de-47ba-83fb-a171ffaa19b9",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/v1/courses/:courseId/courseWork?pageSize=<integer>&pageToken=<string>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "v1",
+                            "courses",
+                            ":courseId",
+                            "courseWork"
+                          ],
+                          "query": [
+                            {
+                              "key": "pageSize",
+                              "value": "<integer>"
+                            },
+                            {
+                              "key": "pageToken",
+                              "value": "<string>"
+                            }
+                          ],
+                          "variable": [
+                            {
+                              "id": "1fc40030-df85-4dcc-bcb4-0de554468b53",
+                              "key": "courseId",
+                              "value": "<string>",
+                              "description": "(Required) "
+                            }
+                          ]
+                        },
+                        "description": "Returns a list of course work that the requester is permitted to view."
+                      },
+                      "response": [
+                        {
+                          "id": "78f5fec0-0408-49b6-b516-ca1ccb62c382",
+                          "name": "Successful response",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/v1/courses/:courseId/courseWork?pageSize=<integer>&pageToken=<string>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "v1",
+                                "courses",
+                                ":courseId",
+                                "courseWork"
+                              ],
+                              "query": [
+                                {
+                                  "key": "pageSize",
+                                  "value": "<integer>"
+                                },
+                                {
+                                  "key": "pageToken",
+                                  "value": "<string>"
+                                }
+                              ],
+                              "variable": [
+                                {
+                                  "key": "courseId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"courseWork\": [\n    {\n      \"courseId\": \"<string>\",\n      \"id\": \"<string>\",\n      \"title\": \"<string>\",\n      \"description\": \"<string>\",\n      \"state\": \"PUBLISHED\",\n      \"workType\": \"SHORT_ANSWER_QUESTION\",\n      \"maxPoints\": \"<number>\",\n      \"dueDate\": {\n        \"year\": \"<integer>\",\n        \"month\": \"<integer>\",\n        \"day\": \"<integer>\"\n      },\n      \"dueTime\": {\n        \"hours\": \"<integer>\",\n        \"minutes\": \"<integer>\"\n      },\n      \"creationTime\": \"<dateTime>\",\n      \"updateTime\": \"<dateTime>\"\n    },\n    {\n      \"courseId\": \"<string>\",\n      \"id\": \"<string>\",\n      \"title\": \"<string>\",\n      \"description\": \"<string>\",\n      \"state\": \"PUBLISHED\",\n      \"workType\": \"SHORT_ANSWER_QUESTION\",\n      \"maxPoints\": \"<number>\",\n      \"dueDate\": {\n        \"year\": \"<integer>\",\n        \"month\": \"<integer>\",\n        \"day\": \"<integer>\"\n      },\n      \"dueTime\": {\n        \"hours\": \"<integer>\",\n        \"minutes\": \"<integer>\"\n      },\n      \"creationTime\": \"<dateTime>\",\n      \"updateTime\": \"<dateTime>\"\n    }\n  ],\n  \"nextPageToken\": \"<string>\"\n}",
+                          "createdAt": "2026-07-28T01:45:18.000Z",
+                          "updatedAt": "2026-07-28T01:45:18.000Z",
+                          "uid": "35240-78f5fec0-0408-49b6-b516-ca1ccb62c382"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T01:45:18.000Z",
+                      "updatedAt": "2026-07-28T01:45:18.000Z",
+                      "uid": "35240-73c99972-60de-47ba-83fb-a171ffaa19b9"
+                    },
+                    {
+                      "name": "Google Classroom Create course work",
+                      "id": "8384000b-0373-4ec4-b20c-7cca9bbd8b47",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"courseId\": \"<string>\",\n  \"id\": \"<string>\",\n  \"title\": \"<string>\",\n  \"description\": \"<string>\",\n  \"state\": \"DRAFT\",\n  \"workType\": \"MULTIPLE_CHOICE_QUESTION\",\n  \"maxPoints\": \"<number>\",\n  \"dueDate\": {\n    \"year\": \"<integer>\",\n    \"month\": \"<integer>\",\n    \"day\": \"<integer>\"\n  },\n  \"dueTime\": {\n    \"hours\": \"<integer>\",\n    \"minutes\": \"<integer>\"\n  },\n  \"creationTime\": \"<dateTime>\",\n  \"updateTime\": \"<dateTime>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/v1/courses/:courseId/courseWork",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "v1",
+                            "courses",
+                            ":courseId",
+                            "courseWork"
+                          ],
+                          "variable": [
+                            {
+                              "id": "7411b6a2-1e69-4b6a-af55-63b5cc695d15",
+                              "key": "courseId",
+                              "value": "<string>",
+                              "description": "(Required) "
+                            }
+                          ]
+                        },
+                        "description": "Creates course work."
+                      },
+                      "response": [
+                        {
+                          "id": "d3e74f6b-44fd-43c4-ab7d-e36eede79e74",
+                          "name": "Successful response",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"courseId\": \"<string>\",\n  \"id\": \"<string>\",\n  \"title\": \"<string>\",\n  \"description\": \"<string>\",\n  \"state\": \"DRAFT\",\n  \"workType\": \"MULTIPLE_CHOICE_QUESTION\",\n  \"maxPoints\": \"<number>\",\n  \"dueDate\": {\n    \"year\": \"<integer>\",\n    \"month\": \"<integer>\",\n    \"day\": \"<integer>\"\n  },\n  \"dueTime\": {\n    \"hours\": \"<integer>\",\n    \"minutes\": \"<integer>\"\n  },\n  \"creationTime\": \"<dateTime>\",\n  \"updateTime\": \"<dateTime>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/v1/courses/:courseId/courseWork",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "v1",
+                                "courses",
+                                ":courseId",
+                                "courseWork"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "courseId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"courseId\": \"<string>\",\n  \"id\": \"<string>\",\n  \"title\": \"<string>\",\n  \"description\": \"<string>\",\n  \"state\": \"DRAFT\",\n  \"workType\": \"MULTIPLE_CHOICE_QUESTION\",\n  \"maxPoints\": \"<number>\",\n  \"dueDate\": {\n    \"year\": \"<integer>\",\n    \"month\": \"<integer>\",\n    \"day\": \"<integer>\"\n  },\n  \"dueTime\": {\n    \"hours\": \"<integer>\",\n    \"minutes\": \"<integer>\"\n  },\n  \"creationTime\": \"<dateTime>\",\n  \"updateTime\": \"<dateTime>\"\n}",
+                          "createdAt": "2026-07-28T01:45:18.000Z",
+                          "updatedAt": "2026-07-28T01:45:18.000Z",
+                          "uid": "35240-d3e74f6b-44fd-43c4-ab7d-e36eede79e74"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T01:45:18.000Z",
+                      "updatedAt": "2026-07-28T01:45:18.000Z",
+                      "uid": "35240-8384000b-0373-4ec4-b20c-7cca9bbd8b47"
+                    }
+                  ],
+                  "id": "7d05af1d-cfe8-41a5-93cf-4cd0a93d9e09",
+                  "createdAt": "2026-07-28T01:45:18.000Z",
+                  "updatedAt": "2026-07-28T01:45:18.000Z",
+                  "uid": "35240-7d05af1d-cfe8-41a5-93cf-4cd0a93d9e09"
+                },
+                {
+                  "name": "students",
+                  "item": [
+                    {
+                      "name": "Google Classroom List students",
+                      "id": "1033cdea-87a3-4948-9c7d-b8e8e472c253",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/v1/courses/:courseId/students?pageSize=<integer>&pageToken=<string>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "v1",
+                            "courses",
+                            ":courseId",
+                            "students"
+                          ],
+                          "query": [
+                            {
+                              "key": "pageSize",
+                              "value": "<integer>"
+                            },
+                            {
+                              "key": "pageToken",
+                              "value": "<string>"
+                            }
+                          ],
+                          "variable": [
+                            {
+                              "id": "8892a850-a88b-42c4-ab35-9fcc381e202d",
+                              "key": "courseId",
+                              "value": "<string>",
+                              "description": "(Required) "
+                            }
+                          ]
+                        },
+                        "description": "Returns a list of students of this course."
+                      },
+                      "response": [
+                        {
+                          "id": "f3b0fa09-e1c7-4ab9-82d8-8375005320bf",
+                          "name": "Successful response",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/v1/courses/:courseId/students?pageSize=<integer>&pageToken=<string>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "v1",
+                                "courses",
+                                ":courseId",
+                                "students"
+                              ],
+                              "query": [
+                                {
+                                  "key": "pageSize",
+                                  "value": "<integer>"
+                                },
+                                {
+                                  "key": "pageToken",
+                                  "value": "<string>"
+                                }
+                              ],
+                              "variable": [
+                                {
+                                  "key": "courseId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"students\": [\n    {\n      \"courseId\": \"<string>\",\n      \"userId\": \"<string>\",\n      \"profile\": {\n        \"id\": \"<string>\",\n        \"name\": {\n          \"givenName\": \"<string>\",\n          \"familyName\": \"<string>\",\n          \"fullName\": \"<string>\"\n        },\n        \"emailAddress\": \"<string>\",\n        \"photoUrl\": \"<string>\"\n      }\n    },\n    {\n      \"courseId\": \"<string>\",\n      \"userId\": \"<string>\",\n      \"profile\": {\n        \"id\": \"<string>\",\n        \"name\": {\n          \"givenName\": \"<string>\",\n          \"familyName\": \"<string>\",\n          \"fullName\": \"<string>\"\n        },\n        \"emailAddress\": \"<string>\",\n        \"photoUrl\": \"<string>\"\n      }\n    }\n  ],\n  \"nextPageToken\": \"<string>\"\n}",
+                          "createdAt": "2026-07-28T01:45:18.000Z",
+                          "updatedAt": "2026-07-28T01:45:18.000Z",
+                          "uid": "35240-f3b0fa09-e1c7-4ab9-82d8-8375005320bf"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T01:45:18.000Z",
+                      "updatedAt": "2026-07-28T01:45:18.000Z",
+                      "uid": "35240-1033cdea-87a3-4948-9c7d-b8e8e472c253"
+                    },
+                    {
+                      "name": "Google Classroom Add student",
+                      "id": "e6784749-6332-4617-84ae-828c783386a1",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"courseId\": \"<string>\",\n  \"userId\": \"<string>\",\n  \"profile\": {\n    \"id\": \"<string>\",\n    \"name\": {\n      \"givenName\": \"<string>\",\n      \"familyName\": \"<string>\",\n      \"fullName\": \"<string>\"\n    },\n    \"emailAddress\": \"<string>\",\n    \"photoUrl\": \"<string>\"\n  }\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/v1/courses/:courseId/students",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "v1",
+                            "courses",
+                            ":courseId",
+                            "students"
+                          ],
+                          "variable": [
+                            {
+                              "id": "79e89c48-1a43-43c1-b92a-80284f921f99",
+                              "key": "courseId",
+                              "value": "<string>",
+                              "description": "(Required) "
+                            }
+                          ]
+                        },
+                        "description": "Adds a user as a student of a course."
+                      },
+                      "response": [
+                        {
+                          "id": "96bfc8e5-c9c4-4b8c-87b6-39d52271852c",
+                          "name": "Successful response",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"courseId\": \"<string>\",\n  \"userId\": \"<string>\",\n  \"profile\": {\n    \"id\": \"<string>\",\n    \"name\": {\n      \"givenName\": \"<string>\",\n      \"familyName\": \"<string>\",\n      \"fullName\": \"<string>\"\n    },\n    \"emailAddress\": \"<string>\",\n    \"photoUrl\": \"<string>\"\n  }\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/v1/courses/:courseId/students",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "v1",
+                                "courses",
+                                ":courseId",
+                                "students"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "courseId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"courseId\": \"<string>\",\n  \"userId\": \"<string>\",\n  \"profile\": {\n    \"id\": \"<string>\",\n    \"name\": {\n      \"givenName\": \"<string>\",\n      \"familyName\": \"<string>\",\n      \"fullName\": \"<string>\"\n    },\n    \"emailAddress\": \"<string>\",\n    \"photoUrl\": \"<string>\"\n  }\n}",
+                          "createdAt": "2026-07-28T01:45:18.000Z",
+                          "updatedAt": "2026-07-28T01:45:18.000Z",
+                          "uid": "35240-96bfc8e5-c9c4-4b8c-87b6-39d52271852c"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T01:45:18.000Z",
+                      "updatedAt": "2026-07-28T01:45:18.000Z",
+                      "uid": "35240-e6784749-6332-4617-84ae-828c783386a1"
+                    }
+                  ],
+                  "id": "9fbd0364-dd7b-44d9-910b-81bc7b2875f8",
+                  "createdAt": "2026-07-28T01:45:18.000Z",
+                  "updatedAt": "2026-07-28T01:45:18.000Z",
+                  "uid": "35240-9fbd0364-dd7b-44d9-910b-81bc7b2875f8"
+                },
+                {
+                  "name": "teachers",
+                  "item": [
+                    {
+                      "name": "Google Classroom List teachers",
+                      "id": "306f9367-ba59-4184-83de-f435c5d5b2a4",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/v1/courses/:courseId/teachers?pageSize=<integer>&pageToken=<string>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "v1",
+                            "courses",
+                            ":courseId",
+                            "teachers"
+                          ],
+                          "query": [
+                            {
+                              "key": "pageSize",
+                              "value": "<integer>"
+                            },
+                            {
+                              "key": "pageToken",
+                              "value": "<string>"
+                            }
+                          ],
+                          "variable": [
+                            {
+                              "id": "692ae4dd-b813-46c7-bce0-4bce24d0d565",
+                              "key": "courseId",
+                              "value": "<string>",
+                              "description": "(Required) "
+                            }
+                          ]
+                        },
+                        "description": "Returns a list of teachers of this course."
+                      },
+                      "response": [
+                        {
+                          "id": "105a5684-b514-4cb3-b84a-3bcc7cbd3dd7",
+                          "name": "Successful response",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/v1/courses/:courseId/teachers?pageSize=<integer>&pageToken=<string>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "v1",
+                                "courses",
+                                ":courseId",
+                                "teachers"
+                              ],
+                              "query": [
+                                {
+                                  "key": "pageSize",
+                                  "value": "<integer>"
+                                },
+                                {
+                                  "key": "pageToken",
+                                  "value": "<string>"
+                                }
+                              ],
+                              "variable": [
+                                {
+                                  "key": "courseId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"teachers\": [\n    {\n      \"courseId\": \"<string>\",\n      \"userId\": \"<string>\",\n      \"profile\": {\n        \"id\": \"<string>\",\n        \"name\": {\n          \"givenName\": \"<string>\",\n          \"familyName\": \"<string>\",\n          \"fullName\": \"<string>\"\n        },\n        \"emailAddress\": \"<string>\",\n        \"photoUrl\": \"<string>\"\n      }\n    },\n    {\n      \"courseId\": \"<string>\",\n      \"userId\": \"<string>\",\n      \"profile\": {\n        \"id\": \"<string>\",\n        \"name\": {\n          \"givenName\": \"<string>\",\n          \"familyName\": \"<string>\",\n          \"fullName\": \"<string>\"\n        },\n        \"emailAddress\": \"<string>\",\n        \"photoUrl\": \"<string>\"\n      }\n    }\n  ],\n  \"nextPageToken\": \"<string>\"\n}",
+                          "createdAt": "2026-07-28T01:45:18.000Z",
+                          "updatedAt": "2026-07-28T01:45:18.000Z",
+                          "uid": "35240-105a5684-b514-4cb3-b84a-3bcc7cbd3dd7"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T01:45:18.000Z",
+                      "updatedAt": "2026-07-28T01:45:18.000Z",
+                      "uid": "35240-306f9367-ba59-4184-83de-f435c5d5b2a4"
+                    },
+                    {
+                      "name": "Google Classroom Add teacher",
+                      "id": "6d325bb6-9ea9-43ea-bfc5-899901b88802",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"courseId\": \"<string>\",\n  \"userId\": \"<string>\",\n  \"profile\": {\n    \"id\": \"<string>\",\n    \"name\": {\n      \"givenName\": \"<string>\",\n      \"familyName\": \"<string>\",\n      \"fullName\": \"<string>\"\n    },\n    \"emailAddress\": \"<string>\",\n    \"photoUrl\": \"<string>\"\n  }\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/v1/courses/:courseId/teachers",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "v1",
+                            "courses",
+                            ":courseId",
+                            "teachers"
+                          ],
+                          "variable": [
+                            {
+                              "id": "c4f0c9c6-c66f-4007-815e-7ddc17a8f814",
+                              "key": "courseId",
+                              "value": "<string>",
+                              "description": "(Required) "
+                            }
+                          ]
+                        },
+                        "description": "Creates a teacher of a course."
+                      },
+                      "response": [
+                        {
+                          "id": "7bcfa7c8-b924-42ce-a345-eeda9a32e238",
+                          "name": "Successful response",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"courseId\": \"<string>\",\n  \"userId\": \"<string>\",\n  \"profile\": {\n    \"id\": \"<string>\",\n    \"name\": {\n      \"givenName\": \"<string>\",\n      \"familyName\": \"<string>\",\n      \"fullName\": \"<string>\"\n    },\n    \"emailAddress\": \"<string>\",\n    \"photoUrl\": \"<string>\"\n  }\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/v1/courses/:courseId/teachers",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "v1",
+                                "courses",
+                                ":courseId",
+                                "teachers"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "courseId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"courseId\": \"<string>\",\n  \"userId\": \"<string>\",\n  \"profile\": {\n    \"id\": \"<string>\",\n    \"name\": {\n      \"givenName\": \"<string>\",\n      \"familyName\": \"<string>\",\n      \"fullName\": \"<string>\"\n    },\n    \"emailAddress\": \"<string>\",\n    \"photoUrl\": \"<string>\"\n  }\n}",
+                          "createdAt": "2026-07-28T01:45:18.000Z",
+                          "updatedAt": "2026-07-28T01:45:18.000Z",
+                          "uid": "35240-7bcfa7c8-b924-42ce-a345-eeda9a32e238"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T01:45:18.000Z",
+                      "updatedAt": "2026-07-28T01:45:18.000Z",
+                      "uid": "35240-6d325bb6-9ea9-43ea-bfc5-899901b88802"
+                    }
+                  ],
+                  "id": "72afd9c1-d0f8-4d29-a0e1-b13f77588020",
+                  "createdAt": "2026-07-28T01:45:18.000Z",
+                  "updatedAt": "2026-07-28T01:45:18.000Z",
+                  "uid": "35240-72afd9c1-d0f8-4d29-a0e1-b13f77588020"
+                },
+                {
+                  "name": "announcements",
+                  "item": [
+                    {
+                      "name": "Google Classroom List announcements",
+                      "id": "7ec10022-8e56-4aca-9ef0-13b812f8ce2f",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                          "raw": "{{baseUrl}}/v1/courses/:courseId/announcements?pageSize=<integer>&pageToken=<string>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "v1",
+                            "courses",
+                            ":courseId",
+                            "announcements"
+                          ],
+                          "query": [
+                            {
+                              "key": "pageSize",
+                              "value": "<integer>"
+                            },
+                            {
+                              "key": "pageToken",
+                              "value": "<string>"
+                            }
+                          ],
+                          "variable": [
+                            {
+                              "id": "5eb9fa8a-32d7-4dd5-b946-57fc920f9dc7",
+                              "key": "courseId",
+                              "value": "<string>",
+                              "description": "(Required) "
+                            }
+                          ]
+                        },
+                        "description": "Returns a list of announcements."
+                      },
+                      "response": [
+                        {
+                          "id": "9d45252c-5d7f-408a-bd85-6f8e47361ff9",
+                          "name": "Successful response",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [],
+                            "url": {
+                              "raw": "{{baseUrl}}/v1/courses/:courseId/announcements?pageSize=<integer>&pageToken=<string>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "v1",
+                                "courses",
+                                ":courseId",
+                                "announcements"
+                              ],
+                              "query": [
+                                {
+                                  "key": "pageSize",
+                                  "value": "<integer>"
+                                },
+                                {
+                                  "key": "pageToken",
+                                  "value": "<string>"
+                                }
+                              ],
+                              "variable": [
+                                {
+                                  "key": "courseId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T01:45:18.000Z",
+                          "updatedAt": "2026-07-28T01:45:18.000Z",
+                          "uid": "35240-9d45252c-5d7f-408a-bd85-6f8e47361ff9"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T01:45:18.000Z",
+                      "updatedAt": "2026-07-28T01:45:18.000Z",
+                      "uid": "35240-7ec10022-8e56-4aca-9ef0-13b812f8ce2f"
+                    },
+                    {
+                      "name": "Google Classroom Create announcement",
+                      "id": "9858670a-81b1-4289-a1fd-580a2010215a",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"courseId\": \"<string>\",\n  \"id\": \"<string>\",\n  \"text\": \"<string>\",\n  \"state\": \"PUBLISHED\",\n  \"creationTime\": \"<dateTime>\",\n  \"updateTime\": \"<dateTime>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/v1/courses/:courseId/announcements",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "v1",
+                            "courses",
+                            ":courseId",
+                            "announcements"
+                          ],
+                          "variable": [
+                            {
+                              "id": "3ecf8b19-b42d-4248-bd89-53bf2a4fd8e5",
+                              "key": "courseId",
+                              "value": "<string>",
+                              "description": "(Required) "
+                            }
+                          ]
+                        },
+                        "description": "Creates an announcement."
+                      },
+                      "response": [
+                        {
+                          "id": "a47b184a-35f4-4c35-ae67-ea2e0bff5bdb",
+                          "name": "Successful response",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"courseId\": \"<string>\",\n  \"id\": \"<string>\",\n  \"text\": \"<string>\",\n  \"state\": \"PUBLISHED\",\n  \"creationTime\": \"<dateTime>\",\n  \"updateTime\": \"<dateTime>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/v1/courses/:courseId/announcements",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "v1",
+                                "courses",
+                                ":courseId",
+                                "announcements"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "courseId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"courseId\": \"<string>\",\n  \"id\": \"<string>\",\n  \"text\": \"<string>\",\n  \"state\": \"PUBLISHED\",\n  \"creationTime\": \"<dateTime>\",\n  \"updateTime\": \"<dateTime>\"\n}",
+                          "createdAt": "2026-07-28T01:45:18.000Z",
+                          "updatedAt": "2026-07-28T01:45:18.000Z",
+                          "uid": "35240-a47b184a-35f4-4c35-ae67-ea2e0bff5bdb"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T01:45:18.000Z",
+                      "updatedAt": "2026-07-28T01:45:18.000Z",
+                      "uid": "35240-9858670a-81b1-4289-a1fd-580a2010215a"
+                    }
+                  ],
+                  "id": "eb541be3-2698-43b2-855b-21384b98a52e",
+                  "createdAt": "2026-07-28T01:45:18.000Z",
+                  "updatedAt": "2026-07-28T01:45:18.000Z",
+                  "uid": "35240-eb541be3-2698-43b2-855b-21384b98a52e"
+                },
+                {
+                  "name": "topics",
+                  "item": [
+                    {
+                      "name": "Google Classroom List topics",
+                      "id": "2bb0ce2d-6a62-4ea1-b584-bef26d720e8b",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                          "raw": "{{baseUrl}}/v1/courses/:courseId/topics",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "v1",
+                            "courses",
+                            ":courseId",
+                            "topics"
+                          ],
+                          "variable": [
+                            {
+                              "id": "765067c5-4550-409a-b828-35070a2cf763",
+                              "key": "courseId",
+                              "value": "<string>",
+                              "description": "(Required) "
+                            }
+                          ]
+                        },
+                        "description": "Returns the list of topics that the requester is permitted to view."
+                      },
+                      "response": [
+                        {
+                          "id": "bc6bf40e-d865-425a-bfd8-c1f6022ce7f1",
+                          "name": "Successful response",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [],
+                            "url": {
+                              "raw": "{{baseUrl}}/v1/courses/:courseId/topics",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "v1",
+                                "courses",
+                                ":courseId",
+                                "topics"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "courseId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T01:45:18.000Z",
+                          "updatedAt": "2026-07-28T01:45:18.000Z",
+                          "uid": "35240-bc6bf40e-d865-425a-bfd8-c1f6022ce7f1"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T01:45:18.000Z",
+                      "updatedAt": "2026-07-28T01:45:18.000Z",
+                      "uid": "35240-2bb0ce2d-6a62-4ea1-b584-bef26d720e8b"
+                    },
+                    {
+                      "name": "Google Classroom Create topic",
+                      "id": "e8cb318f-2094-4cad-9a93-d5a074c7665b",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"courseId\": \"<string>\",\n  \"topicId\": \"<string>\",\n  \"name\": \"<string>\",\n  \"updateTime\": \"<dateTime>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/v1/courses/:courseId/topics",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "v1",
+                            "courses",
+                            ":courseId",
+                            "topics"
+                          ],
+                          "variable": [
+                            {
+                              "id": "7c48cc2e-1eb1-4360-8708-d5fcedb3b8cd",
+                              "key": "courseId",
+                              "value": "<string>",
+                              "description": "(Required) "
+                            }
+                          ]
+                        },
+                        "description": "Creates a topic."
+                      },
+                      "response": [
+                        {
+                          "id": "d41bf24b-5a2d-4008-b5f2-9631245cae30",
+                          "name": "Successful response",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"courseId\": \"<string>\",\n  \"topicId\": \"<string>\",\n  \"name\": \"<string>\",\n  \"updateTime\": \"<dateTime>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/v1/courses/:courseId/topics",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "v1",
+                                "courses",
+                                ":courseId",
+                                "topics"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "courseId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"courseId\": \"<string>\",\n  \"topicId\": \"<string>\",\n  \"name\": \"<string>\",\n  \"updateTime\": \"<dateTime>\"\n}",
+                          "createdAt": "2026-07-28T01:45:18.000Z",
+                          "updatedAt": "2026-07-28T01:45:18.000Z",
+                          "uid": "35240-d41bf24b-5a2d-4008-b5f2-9631245cae30"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T01:45:18.000Z",
+                      "updatedAt": "2026-07-28T01:45:18.000Z",
+                      "uid": "35240-e8cb318f-2094-4cad-9a93-d5a074c7665b"
+                    }
+                  ],
+                  "id": "c4bf180b-019f-42cf-818a-d6c011e91ec1",
+                  "createdAt": "2026-07-28T01:45:18.000Z",
+                  "updatedAt": "2026-07-28T01:45:18.000Z",
+                  "uid": "35240-c4bf180b-019f-42cf-818a-d6c011e91ec1"
+                }
+              ],
+              "id": "180e47a6-d07e-4c3d-a07a-3886f54ca3c8",
+              "createdAt": "2026-07-28T01:45:18.000Z",
+              "updatedAt": "2026-07-28T01:45:18.000Z",
+              "uid": "35240-180e47a6-d07e-4c3d-a07a-3886f54ca3c8"
+            },
+            {
+              "name": "Google Classroom List courses",
+              "id": "bff80d8d-22a3-4a1f-b8ea-e7a3b6aea77c",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/v1/courses?pageSize=<integer>&pageToken=<string>&studentId=<string>&teacherId=<string>&courseStates=DECLINED&courseStates=PROVISIONED",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "v1",
+                    "courses"
+                  ],
+                  "query": [
+                    {
+                      "key": "pageSize",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "pageToken",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "studentId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "teacherId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "courseStates",
+                      "value": "DECLINED"
+                    },
+                    {
+                      "key": "courseStates",
+                      "value": "PROVISIONED"
+                    }
+                  ]
+                },
+                "description": "Returns a list of courses that the requesting user is permitted to view."
+              },
+              "response": [
+                {
+                  "id": "cdf208a2-95eb-441f-a18a-9e7b572ed0d0",
+                  "name": "Successful response",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/v1/courses?pageSize=<integer>&pageToken=<string>&studentId=<string>&teacherId=<string>&courseStates=PROVISIONED",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "v1",
+                        "courses"
+                      ],
+                      "query": [
+                        {
+                          "key": "pageSize",
+                          "value": "<integer>"
+                        },
+                        {
+                          "key": "pageToken",
+                          "value": "<string>"
+                        },
+                        {
+                          "key": "studentId",
+                          "value": "<string>"
+                        },
+                        {
+                          "key": "teacherId",
+                          "value": "<string>"
+                        },
+                        {
+                          "key": "courseStates",
+                          "value": "PROVISIONED"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"courses\": [\n    {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"section\": \"<string>\",\n      \"descriptionHeading\": \"<string>\",\n      \"description\": \"<string>\",\n      \"room\": \"<string>\",\n      \"ownerId\": \"<string>\",\n      \"courseState\": \"PROVISIONED\",\n      \"enrollmentCode\": \"<string>\",\n      \"creationTime\": \"<dateTime>\",\n      \"updateTime\": \"<dateTime>\"\n    },\n    {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"section\": \"<string>\",\n      \"descriptionHeading\": \"<string>\",\n      \"description\": \"<string>\",\n      \"room\": \"<string>\",\n      \"ownerId\": \"<string>\",\n      \"courseState\": \"DECLINED\",\n      \"enrollmentCode\": \"<string>\",\n      \"creationTime\": \"<dateTime>\",\n      \"updateTime\": \"<dateTime>\"\n    }\n  ],\n  \"nextPageToken\": \"<string>\"\n}",
+                  "createdAt": "2026-07-28T01:45:18.000Z",
+                  "updatedAt": "2026-07-28T01:45:18.000Z",
+                  "uid": "35240-cdf208a2-95eb-441f-a18a-9e7b572ed0d0"
+                }
+              ],
+              "createdAt": "2026-07-28T01:45:18.000Z",
+              "updatedAt": "2026-07-28T01:45:18.000Z",
+              "uid": "35240-bff80d8d-22a3-4a1f-b8ea-e7a3b6aea77c"
+            },
+            {
+              "name": "Google Classroom Create course",
+              "id": "735a269b-35bc-442a-9f25-f13c89d2426d",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"section\": \"<string>\",\n  \"descriptionHeading\": \"<string>\",\n  \"description\": \"<string>\",\n  \"room\": \"<string>\",\n  \"ownerId\": \"<string>\",\n  \"courseState\": \"SUSPENDED\",\n  \"enrollmentCode\": \"<string>\",\n  \"creationTime\": \"<dateTime>\",\n  \"updateTime\": \"<dateTime>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/v1/courses",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "v1",
+                    "courses"
+                  ]
+                },
+                "description": "Creates a course."
+              },
+              "response": [
+                {
+                  "id": "35d5b37c-bf37-4bcd-ae0b-009083f19184",
+                  "name": "Successful response",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"section\": \"<string>\",\n  \"descriptionHeading\": \"<string>\",\n  \"description\": \"<string>\",\n  \"room\": \"<string>\",\n  \"ownerId\": \"<string>\",\n  \"courseState\": \"SUSPENDED\",\n  \"enrollmentCode\": \"<string>\",\n  \"creationTime\": \"<dateTime>\",\n  \"updateTime\": \"<dateTime>\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/v1/courses",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "v1",
+                        "courses"
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"section\": \"<string>\",\n  \"descriptionHeading\": \"<string>\",\n  \"description\": \"<string>\",\n  \"room\": \"<string>\",\n  \"ownerId\": \"<string>\",\n  \"courseState\": \"SUSPENDED\",\n  \"enrollmentCode\": \"<string>\",\n  \"creationTime\": \"<dateTime>\",\n  \"updateTime\": \"<dateTime>\"\n}",
+                  "createdAt": "2026-07-28T01:45:18.000Z",
+                  "updatedAt": "2026-07-28T01:45:18.000Z",
+                  "uid": "35240-35d5b37c-bf37-4bcd-ae0b-009083f19184"
+                }
+              ],
+              "createdAt": "2026-07-28T01:45:18.000Z",
+              "updatedAt": "2026-07-28T01:45:18.000Z",
+              "uid": "35240-735a269b-35bc-442a-9f25-f13c89d2426d"
+            }
+          ],
+          "id": "7f5b6931-b7ac-425d-a968-b0264c7ab003",
+          "createdAt": "2026-07-28T01:45:18.000Z",
+          "updatedAt": "2026-07-28T01:45:18.000Z",
+          "uid": "35240-7f5b6931-b7ac-425d-a968-b0264c7ab003"
+        }
+      ],
+      "id": "39ff11f8-c28e-4565-a951-650c4649316b",
+      "createdAt": "2026-07-28T01:45:18.000Z",
+      "updatedAt": "2026-07-28T01:45:18.000Z",
+      "uid": "35240-39ff11f8-c28e-4565-a951-650c4649316b"
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://classroom.googleapis.com"
+    }
+  ]
+}
