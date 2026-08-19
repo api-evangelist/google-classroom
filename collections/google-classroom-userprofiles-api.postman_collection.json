@@ -1,0 +1,122 @@
+{
+  "item": [
+    {
+      "id": "51157eab-89e3-4003-9ce9-1b0404d8478d",
+      "name": "userProfiles",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "bb91ff1c-5227-4f79-8285-6e35aeb2f977",
+          "name": "Google Classroom Get user profile",
+          "request": {
+            "name": "Google Classroom Get user profile",
+            "description": {
+              "content": "Returns a user profile.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "userProfiles",
+                ":userId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "userId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "50f16075-b984-459b-9dfb-2d93e8e9dfd4",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "userProfiles",
+                    ":userId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "userId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"name\": {\n    \"givenName\": \"string\",\n    \"familyName\": \"string\",\n    \"fullName\": \"string\"\n  },\n  \"emailAddress\": \"string\",\n  \"photoUrl\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://classroom.googleapis.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "aa8721f2-a76f-4e08-aa2b-a08c8913b2b6",
+    "name": "Google Classroom Courses userProfiles API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Google Classroom API manages courses, coursework, student submissions, announcements, materials, rosters, topics, invitations, guardians, and integrations with third-party add-ons for educational workflows.\n\nContact Support:\n Name: Google",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Google Classroom Courses userProfiles API",
+    "version": "v1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "userProfiles",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Google Classroom Get user profile",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://classroom.googleapis.com/v1/userProfiles/:userId",
+            "params": [
+              {
+                "name": "userId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Returns a user profile."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
