@@ -78,6 +78,8 @@ apis:
   humanURL: https://developers.google.com/classroom
   baseURL: https://classroom.googleapis.com
   tags:
+  - User Profiles
+  tags_raw:
   - userProfiles
   properties:
   - type: OpenAPI
