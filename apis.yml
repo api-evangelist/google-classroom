@@ -107,6 +107,9 @@ apis:
   - type: JSONLD
     url: json-ld/json-ld.jsonld
 common:
+  - type: CapabilityMap
+    url: capabilities/google-classroom-capability-edges.yml
+    name: Google Classroom Business Capability Map
   - type: PostmanWorkspace
     url: https://www.postman.com/kinlaneapi/google-classroom/overview
   - type: AgenticAccess
