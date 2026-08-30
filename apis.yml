@@ -89,8 +89,7 @@ apis:
   description: The userProfiles API from Google Classroom — 1 operation(s) for userprofiles.
   humanURL: https://developers.google.com/classroom
   baseURL: https://classroom.googleapis.com
-  tags:
-  - User Profiles
+  tags: []
   tags_raw:
   - userProfiles
   properties:
