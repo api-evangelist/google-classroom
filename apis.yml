@@ -107,6 +107,8 @@ apis:
   - type: JSONLD
     url: json-ld/json-ld.jsonld
 common:
+  - type: Website
+    url: https://www.google.com/
   - type: CapabilityMap
     url: capabilities/google-classroom-capability-edges.yml
     name: Google Classroom Business Capability Map
@@ -143,3 +145,5 @@ common:
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
+x-parent: google
+x-relationship: product

@@ -1,4 +1,4 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
   title: Google Classroom Courses API
   description: The Google Classroom API manages courses, coursework, student submissions, announcements, materials, rosters, topics, invitations, guardians, and integrations with third-party add-ons for educational workflows.
@@ -517,6 +517,55 @@ paths:
       - Courses
 components:
   schemas:
+    Announcement:
+      type: object
+      properties:
+        courseId:
+          type: string
+        id:
+          type: string
+        text:
+          type: string
+        state:
+          type: string
+          enum:
+          - ANNOUNCEMENT_STATE_UNSPECIFIED
+          - PUBLISHED
+          - DRAFT
+          - DELETED
+        creationTime:
+          type: string
+          format: date-time
+        updateTime:
+          type: string
+          format: date-time
+    ListCourseWorkResponse:
+      type: object
+      properties:
+        courseWork:
+          type: array
+          items:
+            $ref: '#/components/schemas/CourseWork'
+        nextPageToken:
+          type: string
+    Teacher:
+      type: object
+      properties:
+        courseId:
+          type: string
+        userId:
+          type: string
+        profile:
+          $ref: '#/components/schemas/UserProfile'
+    ListStudentSubmissionsResponse:
+      type: object
+      properties:
+        studentSubmissions:
+          type: array
+          items:
+            $ref: '#/components/schemas/StudentSubmission'
+        nextPageToken:
+          type: string
     Course:
       type: object
       properties:
@@ -551,6 +600,72 @@ components:
         updateTime:
           type: string
           format: date-time
+    Student:
+      type: object
+      properties:
+        courseId:
+          type: string
+        userId:
+          type: string
+        profile:
+          $ref: '#/components/schemas/UserProfile'
+    StudentSubmission:
+      type: object
+      properties:
+        courseId:
+          type: string
+        courseWorkId:
+          type: string
+        id:
+          type: string
+        userId:
+          type: string
+        state:
+          type: string
+          enum:
+          - SUBMISSION_STATE_UNSPECIFIED
+          - NEW
+          - CREATED
+          - TURNED_IN
+          - RETURNED
+          - RECLAIMED_BY_STUDENT
+        assignedGrade:
+          type: number
+        draftGrade:
+          type: number
+        creationTime:
+          type: string
+          format: date-time
+        updateTime:
+          type: string
+          format: date-time
+    UserProfile:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: object
+          properties:
+            givenName:
+              type: string
+            familyName:
+              type: string
+            fullName:
+              type: string
+        emailAddress:
+          type: string
+        photoUrl:
+          type: string
+    ListStudentsResponse:
+      type: object
+      properties:
+        students:
+          type: array
+          items:
+            $ref: '#/components/schemas/Student'
+        nextPageToken:
+          type: string
     CourseWork:
       type: object
       properties:
@@ -609,24 +724,6 @@ components:
             $ref: '#/components/schemas/Course'
         nextPageToken:
           type: string
-    Student:
-      type: object
-      properties:
-        courseId:
-          type: string
-        userId:
-          type: string
-        profile:
-          $ref: '#/components/schemas/UserProfile'
-    ListCourseWorkResponse:
-      type: object
-      properties:
-        courseWork:
-          type: array
-          items:
-            $ref: '#/components/schemas/CourseWork'
-        nextPageToken:
-          type: string
     Topic:
       type: object
       properties:
@@ -639,54 +736,6 @@ components:
         updateTime:
           type: string
           format: date-time
-    UserProfile:
-      type: object
-      properties:
-        id:
-          type: string
-        name:
-          type: object
-          properties:
-            givenName:
-              type: string
-            familyName:
-              type: string
-            fullName:
-              type: string
-        emailAddress:
-          type: string
-        photoUrl:
-          type: string
-    StudentSubmission:
-      type: object
-      properties:
-        courseId:
-          type: string
-        courseWorkId:
-          type: string
-        id:
-          type: string
-        userId:
-          type: string
-        state:
-          type: string
-          enum:
-          - SUBMISSION_STATE_UNSPECIFIED
-          - NEW
-          - CREATED
-          - TURNED_IN
-          - RETURNED
-          - RECLAIMED_BY_STUDENT
-        assignedGrade:
-          type: number
-        draftGrade:
-          type: number
-        creationTime:
-          type: string
-          format: date-time
-        updateTime:
-          type: string
-          format: date-time
     ListTeachersResponse:
       type: object
       properties:
@@ -696,52 +745,3 @@ components:
             $ref: '#/components/schemas/Teacher'
         nextPageToken:
           type: string
-    ListStudentSubmissionsResponse:
-      type: object
-      properties:
-        studentSubmissions:
-          type: array
-          items:
-            $ref: '#/components/schemas/StudentSubmission'
-        nextPageToken:
-          type: string
-    ListStudentsResponse:
-      type: object
-      properties:
-        students:
-          type: array
-          items:
-            $ref: '#/components/schemas/Student'
-        nextPageToken:
-          type: string
-    Announcement:
-      type: object
-      properties:
-        courseId:
-          type: string
-        id:
-          type: string
-        text:
-          type: string
-        state:
-          type: string
-          enum:
-          - ANNOUNCEMENT_STATE_UNSPECIFIED
-          - PUBLISHED
-          - DRAFT
-          - DELETED
-        creationTime:
-          type: string
-          format: date-time
-        updateTime:
-          type: string
-          format: date-time
-    Teacher:
-      type: object
-      properties:
-        courseId:
-          type: string
-        userId:
-          type: string
-        profile:
-          $ref: '#/components/schemas/UserProfile'
