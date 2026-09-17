@@ -84,18 +84,16 @@ apis:
     url: json-schema/json-schema.yml
   - type: JSONLD
     url: json-ld/json-ld.jsonld
-- aid: google-classroom:google-classroom-userprofiles-api
-  name: Google Classroom userProfiles API
-  description: The userProfiles API from Google Classroom — 1 operation(s) for userprofiles.
+- aid: google-classroom:google-classroom-user-profiles-api
+  name: Google Classroom User Profiles API
+  description: The User Profiles API from Google Classroom — 1 operation(s) for user profiles.
   humanURL: https://developers.google.com/classroom
   baseURL: https://classroom.googleapis.com
   tags:
   - User Profiles
-  tags_raw:
-  - userProfiles
   properties:
   - type: OpenAPI
-    url: openapi/google-classroom-userprofiles-api-openapi.yml
+    url: openapi/google-classroom-user-profiles-api-openapi.yml
   - type: Documentation
     url: https://developers.google.com/workspace/classroom/guides/get-started
   - type: Authentication
