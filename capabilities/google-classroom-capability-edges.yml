@@ -1,0 +1,26 @@
+slug: google-classroom
+provider: Google Classroom
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Education
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 1
+edges:
+- tag: Courses
+  spec_file: google-classroom-courses-api-openapi.yml
+  capability_id: BC-4730.30
+  capability_id_l1: BC-4730
+  capability_name: Learning Environment Management
+  confidence: 0.8
+  evidence: POST /v1/courses createCourse; GET /v1/courses/{courseId}/courseWork listCourseWork; GET .../studentSubmissions
+    listStudentSubmissions; schemas Course, CourseWork, StudentSubmission, Teacher, Student
+  reason: 'This is learning-management-system operation: course spaces, distribution of coursework/materials,
+    rosters and collection of student submissions. Learning Environment Management is the closest fit,
+    though assessment/grading elements overlap other L2s.'
