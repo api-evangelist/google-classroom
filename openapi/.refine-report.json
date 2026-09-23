@@ -1,23 +1,27 @@
 {
   "provider": "google-classroom",
   "sources": [
-    "google-classroom-courses-api-openapi.yml",
-    "google-classroom-invitations-api-openapi.yml",
-    "google-classroom-userprofiles-api-openapi.yml"
+    "_original/openapi.yml"
   ],
   "outputs": [
     "google-classroom-courses-api-openapi.yml",
     "google-classroom-invitations-api-openapi.yml",
     "google-classroom-userprofiles-api-openapi.yml"
   ],
-  "archived": [],
+  "archived": [
+    "deleted 1 superseded output(s) from the previous generation"
+  ],
   "errors": [],
   "warnings": [],
   "notes": [
-    "google-classroom-courses-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
-    "google-classroom-invitations-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
-    "google-classroom-userprofiles-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
-    "apis.yml register: already-registered"
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "superseded outputs removed: google-classroom-user-profiles-api-openapi.yml",
+    "apis.yml register: written (+1 apis, 3 total)"
   ],
-  "skipped": []
+  "skipped": [
+    "google-classroom-courses-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "google-classroom-invitations-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "google-classroom-user-profiles-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }
