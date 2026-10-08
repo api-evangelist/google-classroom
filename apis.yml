@@ -105,6 +105,12 @@ apis:
   - type: JSONLD
     url: json-ld/json-ld.jsonld
 common:
+  - type: Plans
+    url: plans/google-classroom-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/google-classroom-rate-limits.yml
+  - type: FinOps
+    url: finops/google-classroom-finops.yml
   - type: Website
     url: https://www.google.com/
   - type: CapabilityMap
