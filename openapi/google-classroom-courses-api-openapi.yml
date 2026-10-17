@@ -517,37 +517,15 @@ paths:
       - Courses
 components:
   schemas:
-    Student:
+    ListStudentsResponse:
       type: object
       properties:
-        courseId:
+        students:
+          type: array
+          items:
+            $ref: '#/components/schemas/Student'
+        nextPageToken:
           type: string
-        userId:
-          type: string
-        profile:
-          $ref: '#/components/schemas/UserProfile'
-    Announcement:
-      type: object
-      properties:
-        courseId:
-          type: string
-        id:
-          type: string
-        text:
-          type: string
-        state:
-          type: string
-          enum:
-          - ANNOUNCEMENT_STATE_UNSPECIFIED
-          - PUBLISHED
-          - DRAFT
-          - DELETED
-        creationTime:
-          type: string
-          format: date-time
-        updateTime:
-          type: string
-          format: date-time
     Teacher:
       type: object
       properties:
@@ -557,6 +535,24 @@ components:
           type: string
         profile:
           $ref: '#/components/schemas/UserProfile'
+    ListStudentSubmissionsResponse:
+      type: object
+      properties:
+        studentSubmissions:
+          type: array
+          items:
+            $ref: '#/components/schemas/StudentSubmission'
+        nextPageToken:
+          type: string
+    ListCourseWorkResponse:
+      type: object
+      properties:
+        courseWork:
+          type: array
+          items:
+            $ref: '#/components/schemas/CourseWork'
+        nextPageToken:
+          type: string
     Course:
       type: object
       properties:
@@ -591,6 +587,75 @@ components:
         updateTime:
           type: string
           format: date-time
+    Topic:
+      type: object
+      properties:
+        courseId:
+          type: string
+        topicId:
+          type: string
+        name:
+          type: string
+        updateTime:
+          type: string
+          format: date-time
+    ListCoursesResponse:
+      type: object
+      properties:
+        courses:
+          type: array
+          items:
+            $ref: '#/components/schemas/Course'
+        nextPageToken:
+          type: string
+    ListTeachersResponse:
+      type: object
+      properties:
+        teachers:
+          type: array
+          items:
+            $ref: '#/components/schemas/Teacher'
+        nextPageToken:
+          type: string
+    Student:
+      type: object
+      properties:
+        courseId:
+          type: string
+        userId:
+          type: string
+        profile:
+          $ref: '#/components/schemas/UserProfile'
+    StudentSubmission:
+      type: object
+      properties:
+        courseId:
+          type: string
+        courseWorkId:
+          type: string
+        id:
+          type: string
+        userId:
+          type: string
+        state:
+          type: string
+          enum:
+          - SUBMISSION_STATE_UNSPECIFIED
+          - NEW
+          - CREATED
+          - TURNED_IN
+          - RETURNED
+          - RECLAIMED_BY_STUDENT
+        assignedGrade:
+          type: number
+        draftGrade:
+          type: number
+        creationTime:
+          type: string
+          format: date-time
+        updateTime:
+          type: string
+          format: date-time
     UserProfile:
       type: object
       properties:
@@ -609,45 +674,6 @@ components:
           type: string
         photoUrl:
           type: string
-    ListCourseWorkResponse:
-      type: object
-      properties:
-        courseWork:
-          type: array
-          items:
-            $ref: '#/components/schemas/CourseWork'
-        nextPageToken:
-          type: string
-    ListStudentsResponse:
-      type: object
-      properties:
-        students:
-          type: array
-          items:
-            $ref: '#/components/schemas/Student'
-        nextPageToken:
-          type: string
-    ListCoursesResponse:
-      type: object
-      properties:
-        courses:
-          type: array
-          items:
-            $ref: '#/components/schemas/Course'
-        nextPageToken:
-          type: string
-    Topic:
-      type: object
-      properties:
-        courseId:
-          type: string
-        topicId:
-          type: string
-        name:
-          type: string
-        updateTime:
-          type: string
-          format: date-time
     CourseWork:
       type: object
       properties:
@@ -697,51 +723,25 @@ components:
         updateTime:
           type: string
           format: date-time
-    ListStudentSubmissionsResponse:
-      type: object
-      properties:
-        studentSubmissions:
-          type: array
-          items:
-            $ref: '#/components/schemas/StudentSubmission'
-        nextPageToken:
-          type: string
-    StudentSubmission:
+    Announcement:
       type: object
       properties:
         courseId:
           type: string
-        courseWorkId:
-          type: string
         id:
           type: string
-        userId:
+        text:
           type: string
         state:
           type: string
           enum:
-          - SUBMISSION_STATE_UNSPECIFIED
-          - NEW
-          - CREATED
-          - TURNED_IN
-          - RETURNED
-          - RECLAIMED_BY_STUDENT
-        assignedGrade:
-          type: number
-        draftGrade:
-          type: number
+          - ANNOUNCEMENT_STATE_UNSPECIFIED
+          - PUBLISHED
+          - DRAFT
+          - DELETED
         creationTime:
           type: string
           format: date-time
         updateTime:
           type: string
           format: date-time
-    ListTeachersResponse:
-      type: object
-      properties:
-        teachers:
-          type: array
-          items:
-            $ref: '#/components/schemas/Teacher'
-        nextPageToken:
-          type: string
